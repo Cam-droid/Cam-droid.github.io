@@ -1,0 +1,79 @@
+
+Les défis et opportunités
+=========================================
+
+Empreinte écologique
+********************
+
+Lorsqu’il est question du Bitcoin, de son empreinte environnementale et de ses coûts énergétiques, les discours se multiplient, parfois contradictoires. Cette image, représentant les premiers résultats d’une recherche “Bitcoin CO2” sur google, en offre une illustration frappante : les messages qui en émergent sont pour le moins alarmants.
+
+Cependant, bien que cela puisse paraître contre-intuitif, le système de preuve de travail (Proof of Work, ou PoW) sur lequel repose le Bitcoin génère également de nombreuses externalités positives. En effet, depuis 2008, cette vaste machine s’est mise en marche, créant — intentionnellement ou non — un puissant système d’incitations économiques favorable à la transition énergétique. Grâce à Bitcoin, cette transition ne constitue plus uniquement un coût : elle devient aussi une source potentielle de revenus.
+
+Les acteurs du secteur énergétique qui ont su dépasser une première réaction instinctive de rejet et ont consacré du temps à l’étude du Bitcoin ont souvent connu un véritable moment d’“Eurêka”.
+
+C’est notamment le cas du géant norvégien Aker, qui a récemment annoncé l’ouverture d’une nouvelle activité consacrée au minage, qualifiant ce dernier de “batterie d’équilibrage du réseau”, “essentielle à la transition énergétique nécessaire pour atteindre les objectifs de l’Accord de Paris” (Seetee, 2021). Le leader japonais de l’énergie, Tepco, a adopté une approche similaire en lançant une stratégie de valorisation des surplus électriques (Namcios, 2022).
+
+Et les exemples abondent : l’opérateur de réseau texan ERCOT, les compagnies pétrolières ConocoPhillips et Exxon, ou encore de nombreux investisseurs et acteurs indépendants, parmi lesquels Daniel Batten. Ce dernier, militant pour le climat depuis les années 1990, témoigne :
+
+“En tant qu’activiste pour le climat depuis les années 1990, lorsque j’ai entendu parler pour la première fois de l’utilisation d’énergie par le Bitcoin, j’ai pensé : ‘Cela ne peut être qu’une mauvaise chose.’ Quand quelqu’un a affirmé que c’était ‘net positif’, j’ai cru à une tentative de greenwashing […]. Personne n’a été plus surpris que moi de découvrir que la meilleure manière de réduire nos émissions de GES était… de miner du Bitcoin. […]”
+
+Deux axes de réflexion principaux émergent de ces constats.
+
+Premièrement, le Bitcoin favorise la transition vers un mix électrique intégrant une part croissante d’énergies renouvelables.
+
+Deuxièmement, il constitue l’un des leviers les plus efficaces pour réduire les émissions de méthane dans l’atmosphère — un gaz dont l’impact environnemental est, sur une période de 20 ans, environ 80 fois supérieur à celui du CO₂ — et qui, selon le GIEC, représente un levier crucial pour lutter contre le changement climatique à court terme.
+
+
+Le challenge des ENR
+********************
+
+En ce qui concerne les ENR (nouvelles énergies renouvelables) , Brad Jones, président par intérim du gestionnaire de réseau texan — l’équivalent de RTE  (organisme qui gère le réseau électrique) en France — affirme : « Le minage de Bitcoin aide les nouvelles ENR à trouver une maison sur le réseau, puis équilibre leur intermittence. » Fort de vingt ans d’expérience dans le secteur énergétique, dont trois à la tête du gestionnaire de réseau de New York et quatre en tant que vice-président puis président de l’opérateur texan, cette déclaration de Brad Jones peut surprendre, tant elle semble contre-intuitive.
+
+Pour en comprendre la logique, il est nécessaire de prendre du recul et d’examiner les défis inhérents à la transition énergétique, en particulier ceux liés à l’intégration massive des énergies renouvelables. Ces défis se cristallisent principalement autour de la question de l’intermittence. En effet, les sources telles que le solaire et l’éolien — sur lesquelles nous nous concentrerons ici — ne sont pas pilotables : leur production d’électricité dépend de conditions météorologiques variables, et ne coïncide pas nécessairement avec les lieux ou les moments où la demande est la plus forte. De plus, il est à noter que si la vitesse du vent double — phénomène relativement fréquent — une éolienne peut produire jusqu’à huit fois plus d’électricité, alors même qu’il est rare que la consommation augmente spontanément en proportion.
+
+Ce déséquilibre entre production et consommation engendre une série de problèmes : effacement, équilibrage de charge et de tension sur le réseau, pertes lors du transport (énergie « échouée »), ou encore difficulté à monter rapidement en charge. Ces obstacles rendent difficile la constitution d’un réseau électrique reposant exclusivement sur le solaire et l’éolien, même avec l’appui de batteries.
+
+Commençons par la dimension géographique. Contrairement aux centrales thermiques, les installations solaires et éoliennes nécessitent de vastes superficies, ce qui implique souvent leur implantation dans des zones reculées, éloignées des centres de consommation. Deux conséquences majeures en découlent : d’une part, des pertes accrues par effet Joule durant le transport ; d’autre part, une congestion du réseau, c’est-à-dire l’incapacité à acheminer efficacement l’électricité vers les consommateurs finaux.
+
+Un second enjeu réside dans l’inadéquation temporelle entre production et consommation. Le solaire, par nature, ne produit que le jour, tandis que l’éolien, bien que potentiellement continu, demeure hautement imprévisible. Empiriquement, la demande en électricité connaît deux pics : le matin et en fin d’après-midi. Or, la production solaire atteint son maximum en milieu de journée, précisément lorsque la demande est la plus faible — un décalage qui illustre bien le problème.
+
+Longtemps présentées comme la solution, les batteries ne peuvent à elles seules répondre à ces défis. Malgré une baisse continue de leur coût, elles posent plusieurs limites. D’abord, leur capacité physique reste finie, ce qui signifie qu’elles ne peuvent absorber qu’un volume limité d’excédents d’électricité. De plus, outre cette finitude “physique”, leur logique économique les contraint à se décharger dès que possible, afin de rester disponibles pour de futurs surplus — ce qui ne correspond pas nécessairement aux moments les plus rentables sur les marchés de l’électricité. Ensuite, les batteries reposent sur des ressources critiques telles que le lithium, le cobalt ou le nickel, dont la rareté appelle à les réserver à des usages où elles sont irremplaçables, comme les véhicules électriques. Dans ce contexte, leur emploi à grande échelle pour l’équilibrage des réseaux pourrait être remis en question au profit de solutions alternatives plus adaptées.
+
+Et c’est précisément ici que le minage de Bitcoin peut jouer un rôle complémentaire. Il offre aux opérateurs et gestionnaires de réseau une forme de flexibilité supplémentaire : un second débouché pour l’électricité excédentaire, notamment lorsque les prix de gros ne sont pas attractifs ou que les batteries sont saturées. Un exemple révélateur : au printemps 2024, le réacteur numéro 1 de la centrale nucléaire de Cattenom a été arrêté pendant cent jours — non pas par manque de combustible, mais faute de débouchés pour l’électricité produite.
+
+La principale force du minage réside dans cette flexibilité : il peut être déployé partout, activé ou désactivé instantanément, à la demande, pour des durées très variables. Il répond ainsi parfaitement aux exigences des programmes d’effacement (demand response), dont l’importance croît à mesure que les énergies intermittentes se développent. Ces dernières doivent en effet être dimensionnées de façon à répondre aux besoins, y compris dans des conditions météorologiques défavorables.
+
+Cela étant dit, il convient de rappeler que le mix énergétique actuel du Bitcoin est loin d’être irréprochable. L’étude de référence citée dans la majorité des médias, celle de l’Université de Cambridge, évalue à 37,5 % la part des énergies renouvelables dans le mix énergétique du Bitcoin. Ce chiffre souligne l’importance d’une amélioration : il n’existe en effet aucun bénéfice écologique — bien au contraire — à miner du Bitcoin à partir d’électricité issue de sources fossiles.
+
+
+Le challenge du méthane
+***********************
+
+Nous avons précédemment mis en évidence la manière dont le minage de bitcoins peut contribuer de manière significative à l’équilibrage des réseaux électriques, tout en favorisant le déploiement des énergies renouvelables en améliorant leur rentabilité et en réduisant leurs risques. Il existe toutefois un second vecteur d’utilisation du minage, tout aussi prometteur : sa contribution à la réduction des émissions de gaz à effet de serre (GES), notamment à travers la limitation des émissions de méthane.
+
+Le méthane est en effet un GES bien plus dangereux que le dioxyde de carbone : sur une période de 20 ans, son impact est environ 80 fois supérieur à celui du CO₂. Autrement dit, chaque molécule de méthane relâchée dans l’atmosphère équivaut à 80 molécules de CO₂ sur cette échelle temporelle.
+
+Comme le souligne Inger Andersen, Directrice Exécutive du Programme des Nations Unies pour l’Environnement (UNEP, 2021) : « Réduire le méthane est le levier le plus puissant que nous avons pour réduire le changement climatique sur les 25 prochaines années, en complément des efforts nécessaires pour réduire le dioxyde de carbone. »
+
+À partir de ce constat, il est essentiel d’identifier les principales sources anthropiques d’émission de méthane. Selon l’UNEP (2021), plus de la moitié des émissions mondiales de méthane d’origine humaine proviennent de trois grands secteurs : les combustibles fossiles (35 %, dont 23 % pour le pétrole et le gaz, et 12 % pour le charbon), la gestion des déchets (décharges, eaux usées etc), et l’agriculture (40 %, répartis entre l’élevage — 32 %, via le fumier et la fermentation entérique — et la culture du riz — 8 %). Cette répartition explique notamment pourquoi la réduction de la consommation de viande, en particulier de viande bovine, est souvent présentée comme un levier majeur pour la baisse des émissions de GES.
+
+Cependant, si cette dernière approche est aujourd’hui relativement bien acceptée dans les discours, les deux premiers leviers — les émissions liées aux combustibles fossiles et aux déchets — peinent à enregistrer des progrès notables.
+
+Le cas du torchage de gaz illustre parfaitement cette inertie. Le torchage consiste à brûler le méthane afin d’éviter son rejet direct dans l’atmosphère. Cette combustion permet de transformer le méthane en dioxyde de carbone, moins nocif à court terme pour le climat. Toutefois, cette pratique reste imparfaite : son efficacité moyenne atteint environ 92 %, selon l’Agence Internationale de l’Énergie (IEA, 2022). Par ailleurs, le torchage représente un coût pour les entreprises, ce qui freine son déploiement systématique.
+
+Cette problématique concerne principalement deux contextes : les décharges — où les déchets en décomposition produisent du méthane — et les exploitations pétrolières, où le gaz associé au pétrole est souvent présent en quantités insuffisantes pour justifier une exploitation rentable, et se voit donc torché faute de débouché.
+
+Aux États-Unis, par exemple, seuls 30 % du méthane émis par les décharges est torché. Le reste est tout simplement relâché tel quel dans l’atmosphère. Du côté des exploitations d’hydrocarbures, la situation est similaire. Le torchage étant une charge financière sans rentabilité directe, environ un quart du gaz inutilisé — c’est-à-dire non consommé sur site, réinjecté ou transporté — est libéré dans l’atmosphère sans combustion, selon les estimations de l’AIE (McGlade, Schulz & Zeniewski, 2020). Cela représente chaque année environ 55 milliards de mètres cubes (bcm) de méthane, dont 19 bcm pour le Moyen-Orient et 13 bcm pour l’Afrique.
+
+Ce manque d’incitation économique constitue l’obstacle principal à une gestion efficace du méthane, et explique en grande partie l’ampleur des émissions non traitées ainsi que la stagnation des efforts observée depuis au moins une décennie. À titre de comparaison, si l’on avait converti ce gaz perdu en électricité, cela aurait représenté l’équivalent des trois quarts de la production annuelle d’électricité de l’Union européenne.
+
+C’est ici que le minage de Bitcoin peut offrir une solution radicalement nouvelle. Selon certaines estimations, cette technologie pourrait à elle seule contribuer à hauteur de 50 % aux objectifs de réduction des émissions de méthane fixés par l’UNEP d’ici 2045. Le changement de paradigme qu’introduit Bitcoin réside dans le fait que la réduction du méthane devient non plus un coût à supporter, mais une source de revenu.
+
+Concrètement, le minage permet de valoriser ce méthane — jusqu’ici perdu — en l’utilisant comme source d’énergie pour alimenter des générateurs électriques couplés à des unités de minage. Cette approche est rapide à déployer, efficace sur le plan technique, et fonctionne sans recourir à une régulation politique contraignante. Elle repose au contraire sur une incitation positive : chaque tonne de méthane évitée est rémunérée par les revenus générés par le minage.
+
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+

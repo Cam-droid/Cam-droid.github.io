@@ -1,0 +1,61 @@
+
+Les cryptomonnaies
+===================
+
+Définitions globales
+********************
+
+Souvent désignés abusivement par le terme de « cryptomonnaies », ces actifs sont considérés comme des “actifs cryptés” par l’Autorité des Marchés Financiers et la Banque de France. 
+
+Selon cette dernière, un crypto-actif est défini comme « un actif numérique (ou digital), créé grâce à l’utilisation de technologies de cryptographie. Ils sont nommés ainsi car ils s’apparentent à des actifs financiers et sont créés et utilisés via des technologies de cryptage ». 
+
+De manière globale, d’après le ministère de l’économie des finances et de la souveraineté industrielle et numérique, les crypto-actifs représentent des actifs virtuels stockés sur un support électronique permettant à une communauté d’utilisateurs les acceptant en paiement de réaliser des transactions sans avoir à recourir à la monnaie légale.
+
+Le Bitcoin, créé en 2008, est la première cryptomonnaie apparue sur le marché, et demeure aujourd’hui la plus connue. Depuis, le nombre de crypto-actifs n’a cessé de croître : selon la Banque de France, près de 25 000 actifs étaient en circulation à la mi-2023. Parmi les plus populaires figurent notamment le Bitcoin, le Tether, l’Ether, le Litecoin, le Dai et le Solana. Et au-delà de cette diversité, c’est surtout par leurs usages concrets que les crypto-actifs se distinguent et révèlent leurs fonctions. Celles-ci sont multiples et méritent d’être précisées.
+
+Différents usages
+*****************
+
+En effet, les crypto-actifs ont avant tout un rôle d’échange, et l’on peut identifier plusieurs motivations à l’origine de ces échanges.
+
+Tout d’abord, les crypto-actifs peuvent être utilisés pour le paiement de biens ou de services. Si ces usages restent rares, ils tendent néanmoins à se développer. À titre d’exemple, plusieurs bars à Paris acceptent désormais le Bitcoin comme moyen de paiement. De même, à Lugano, en Suisse, il est possible de régler certains services publics – tels que le stationnement ou le paiement de taxes et d'impôts locaux – en crypto-actifs.
+
+Les crypto-actifs peuvent également être utilisés dans une logique d’investissement. Certains acteurs économiques développent en effet des thèses d’investissement, estimant que la valeur de tel ou tel actif va évoluer à la hausse ou à la baisse. Ils prennent alors des positions financières en fonction de ces anticipations.
+
+En parallèle, d’autres utilisateurs s’adonnent à une forme de spéculation moins fondée, reposant davantage sur le hasard ou l’effet de foule. Cette spéculation aveugle est particulièrement en vogue en 2025, notamment dans les mouvements “memecoin”.
+
+Par ailleurs, certains usages des crypto-actifs répondent à une logique de protection de l’épargne. En effet, dans des contextes où la monnaie légale – comme la livre égyptienne ou la livre turque – est fragilisée par une forte inflation, la valeur de l’épargne peut être menacée. Or, en situation de débancarisation ou en présence de contrôles des changes, les acteurs concernés n’ont souvent pas accès à des devises plus stables, ce qui les pousse à se tourner vers les crypto-actifs comme alternative.
+
+Un autre usage notable des crypto-actifs concerne la finance décentralisée. Cette dernière reproduit de nombreux mécanismes financiers traditionnels sur les blockchains permettant une programmation avancée, comme celle d’Ethereum par exemple.
+
+Enfin, les jetons non fongibles (ou NFT) constituent une autre forme d’usage des crypto-actifs. En effet, ceux-ci permettent de certifier la propriété d’objets numériques uniques. Ces objets peuvent prendre la forme de badges numériques attestant, par exemple, de la présence à un événement, de signes d’appartenance à une communauté – comme le Bored Ape Yacht Club – ou encore d’œuvres d’art numériques.
+
+Ainsi, bien que les usages des crypto-actifs diffèrent selon les individus, ils sont régulièrement échangés depuis plus de quinze ans et remplissent déjà certaines fonctions traditionnellement associées à la monnaie. Dès lors, une question fondamentale se pose : les crypto-actifs pourraient-ils être considérés comme une véritable monnaie ?
+
+Les cryptomonnaies, une monnaie à part entière ?
+************************************************
+
+Cette question amène à interroger le lien entre la monnaie et la “cryptomonnaie”, une relation qui s’avère particulièrement complexe, notamment parce que la notion de “monnaie” elle-même ne fait pas consensus. En effet, ses définitions officielles varient d’un pays à l’autre, de même que ses définitions académiques selon la discipline (économie, sociologie, ethnographie etc).
+
+Par exemple, l’affirmation selon laquelle les crypto-actifs ne sont pas une “monnaie légale” (voir précédemment la définition des crypto-actifs selon le ministère de l’économie des finances et de la souveraineté industrielle et numérique) peut être sujette à controverse. En effet, le Bitcoin a été déclaré monnaie légale au Salvador en septembre 2021, et ce jusqu’en février 2025.
+
+Il convient donc d’examiner différentes définitions de ce qu’est une monnaie dans son acception la plus large, et d’analyser son lien avec les cryptomonnaies.
+
+Selon la Banque de France, les « cryptomonnaies » — ou plus exactement les crypto-actifs — ne doivent pas être considérés comme une monnaie. Cette position repose sur une approche fonctionnaliste, d'inspiration antique, attribuée à Aristote (-384 à -322), bien que cette filiation puisse prêter à discussion. D’après cette approche, un instrument ne peut être qualifié de monnaie que s’il remplit trois fonctions essentielles : être un instrument d’échange, une unité de compte et une réserve de valeur.
+
+Or, bien que les crypto-actifs aient été conçus à l’origine dans cette optique, ils ne satisfont pas actuellement à ces trois critères.
+
+En effet, ils ne constituent:
+ * ni un instrument d’échange (permettant d’acheter et de vendre facilement au quotidien), 
+ * ni une unité de compte (permettant de comparer les prix des biens et services), 
+ * ni une réserve de valeur car ils ont une grande volatilité. 
+
+Par ailleurs, une définition couramment admise en économie décrit la monnaie comme un « moyen d’échange généralement accepté dans un lieu et à une époque donnée » (F. Mishkin, 2004). Or, force est de constater qu’en France, les crypto-actifs ne remplissent pas ce critère : ils relèvent davantage de projets monétaires que de monnaies pleinement établies au sens de cette définition.
+
+Cependant, d’autres définitions permettent de nuancer cette position. Ainsi, Maël Rolland, auteur d’une thèse sur la gouvernance des cryptomonnaies, considère d’un point de vue ethnographique et dans une pure logique nominaliste que ces dernières peuvent être qualifiées de monnaies, dans la mesure où elles sont les seules acceptées pour régler les frais liés aux transactions sur leurs propres protocoles. Autrement dit, pour réaliser une transaction sur le réseau Bitcoin ou Ethereum par exemple, il est indispensable d’utiliser respectivement du Bitcoin ou de l’Ether. À ce titre, ces crypto-actifs remplissent donc une fonction monétaire dans le cadre de leurs écosystèmes respectifs.
+ 
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:

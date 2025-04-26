@@ -1,0 +1,60 @@
+
+En pratique
+=========================================
+
+L'achat de crypto-actifs
+************************
+
+
+Maintenant que les principaux fondements des cryptomonnaies ont été exposés — à travers la notion de blockchain, le fonctionnement du minage, leurs enjeux énergétiques, ainsi que les opportunités qui en découlent —, il est pertinent d’examiner concrètement comment acquérir des crypto-actifs.
+
+Plusieurs options s’offrent à vous si vous souhaitez acheter des crypto-actifs.
+La première consiste à passer par une société spécialisée dans la vente de cryptomonnaies, appelées brokers. Ce mode d’achat est généralement simple et accessible, bien qu’il implique des prix légèrement supérieurs au marché — cette différence correspondant à la marge prélevée par le broker. En pratique, ces brokers s’approvisionnent souvent eux-mêmes sur des places de marché.
+Une seconde méthode consiste à s’inscrire sur une place de marché de crypto-actifs, ou bourse de crypto-actifs, où les utilisateurs peuvent directement acheter ou vendre des actifs. Sur ces plateformes, certains participants placent des ordres de vente ou d’achats à cours limites (les makers), contribuant à la construction de l’order book, tandis que d’autres acceptent les offres disponibles (les takers), ce qui établit le prix des transactions. Grâce à la nature décentralisée de Bitcoin, il existe une multitude de places de marché indépendantes, ce qui peut entraîner de légères différences de prix d’une plateforme à l’autre — créant ainsi des opportunités potentielles d’arbitrage.
+
+Prenons un exemple hypothétique pour illustrer ce mécanisme. Supposons qu’un vendeur propose 0,01 BTC à 110 000 €, tandis qu’un acheteur souhaite acheter 0,01 BTC à 90 000 €. Le spread — c’est-à-dire l’écart entre la meilleure offre de vente et la meilleure offre d’achat — est ici de 20 000 €, ce qui indique une faible liquidité à cet instant.
+Un nouveau vendeur arrive sur la plateforme et souhaite vendre 0,02 BTC. Pour que son offre soit prioritaire, il propose un prix plus compétitif, disons 109 000 €. Le carnet d’ordres (order book) commence alors à se remplir, et le spread se réduit. Un acheteur pressé peut décider d’acheter 0,03 BTC, ce qui fera de lui un taker acceptant les deux meilleures offres disponibles :
+
+Il achètera 0,02 BTC à 109 000 €,
+
+Puis 0,01 BTC à 110 000 €, ce qui lui coûtera au total :
+
+0,02 × 109 000 + 0,01 × 110 000 = 3 280 €
+
+Le nouveau prix du marché sera alors établi à 110 000 €, soit le prix de la dernière transaction exécutée. Cet exemple, bien que simplifié, permet d’illustrer le rôle de l’order book et le fonctionnement des interactions entre acheteurs et vendeurs sur une bourse de crypto-actifs. 
+
+En général, une place de marché présentant un volume d’échange élevé aura un spread plus réduit, ce qui garantit des prix plus compétitifs pour les utilisateurs. Ces plateformes se rémunèrent en prélevant un faible pourcentage de frais sur la valeur des transactions réalisées. Parmi les plus connues, on peut citer Binance, Crypto.com ou encore Kraken.
+
+Enfin, bien que cette pratique soit nettement moins courante, les caractéristiques décentralisées des protocoles de crypto-actifs rendent également possibles des échanges directs entre particuliers, sans intermédiaire. Ce type d’échange pair-à-pair peut se réaliser pour peu qu’un acheteur et un vendeur entrent directement en contact et s’accordent sur les modalités de la transaction.
+
+Conservation des actifs
+***********************
+
+Une fois la transaction réalisée, le détenteur de crypto-actifs est confronté à une décision importante : laisser ses actifs numériques sur la plateforme d’achat, laquelle en devient alors le dépositaire, ou bien rapatrier ses fonds vers un portefeuille personnel (wallet).
+
+La première option présente l’avantage de la simplicité d’usage, mais elle expose l’utilisateur à des risques significatifs. En effet, si la plateforme venait à faire faillite ou à subir un piratage, les fonds pourraient être définitivement perdus. De nombreux clients en ont fait l’amère expérience, notamment dans le cas de Bitfinex, victime d’un piratage massif, ou encore avec FTX, dont la gestion frauduleuse a entraîné des pertes majeures pour ses utilisateurs.
+
+L’alternative consiste à transférer ses crypto-actifs sur un portefeuille personnel, ce qui permet à l’utilisateur de devenir entièrement maître de ses fonds, sans dépendance vis-à-vis d’un tiers. Bien que cette solution soit plus technique, elle offre une sécurité renforcée. Le processus implique généralement l’installation d’un logiciel portefeuille (wallet), qui génère une clé maîtresse, également appelée seed. Cette seed permet de dériver les adresses associées au portefeuille et de signer les transactions.
+
+La seed se présente sous la forme d’une suite de 12 ou 24 mots, choisis dans une liste prédéfinie de 4096 termes. L’ordre des mots est essentiel, et leur combinaison permet à elle seule de reconstituer l’accès complet au portefeuille. Il est donc vivement déconseillé de créer soi-même ses mots racines, car les humains sont notoirement inefficaces pour générer une véritable liste aléatoire.
+
+Afin de protéger cette information critique, de nombreux experts en sécurité recommandent l’usage de portefeuilles matériels (hardware wallets), des dispositifs conçus pour effectuer les signatures cryptographiques de manière sécurisée, même dans le cas où l’ordinateur hôte serait compromis. En France, la société licorne Ledger s’est imposée comme un acteur majeur dans ce domaine, en proposant des solutions robustes pour le stockage sécurisé des clés privées.
+
+
+
+Les taxes
+*********
+
+La possession et l’utilisation de crypto-actifs impliquent également des obligations fiscales, qu’il est essentiel de connaître pour rester en conformité avec la législation. Ces obligations varient selon le pays de résidence fiscale du détenteur.
+
+En France, en 2024, le régime applicable aux particuliers non professionnels prévoit que seules les plus-values issues de la cession de crypto-actifs contre des biens, des services ou des monnaies ayant cours légal sont imposables. Ces plus-values sont en général soumises à la flat tax au taux global de 30 %.
+
+Par ailleurs, il est fondamental de déclarer dans sa déclaration de revenus l’existence de tout compte détenu sur une plateforme étrangère, qu’il s’agisse d’un broker ou d’une place de marché. Cette obligation de déclaration concerne non seulement les comptes personnels, mais aussi, de manière souvent méconnue, les comptes ouverts à l’étranger au nom des enfants mineurs : ceux-ci doivent être intégrés à la déclaration fiscale des parents.
+
+
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
