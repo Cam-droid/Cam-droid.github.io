@@ -1,411 +1,197 @@
-<!doctype html>
-<html class="no-js" lang="fr" data-content_root="./">
-  <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Recherche" href="search.html" /><link rel="next" title="Les défis et opportunités" href="defis_opportunites.html" /><link rel="prev" title="La Blockchain" href="blockchain.html" />
-
-    <!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
-        <title>Le minage - Documentation Cryptoactifs</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
-    
-    
-
-
-<style>
-  body {
-    --color-code-background: #f8f8f8;
-  --color-code-foreground: black;
-  
-  }
-  @media not print {
-    body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-    }
-    @media (prefers-color-scheme: dark) {
-      body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-      }
-    }
-  }
-</style></head>
-  <body>
-    
-    <script>
-      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
-    </script>
-    
-
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-  <symbol id="svg-toc" viewBox="0 0 24 24">
-    <title>Contents</title>
-    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
-      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
-    </svg>
-  </symbol>
-  <symbol id="svg-menu" viewBox="0 0 24 24">
-    <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
-      <line x1="3" y1="12" x2="21" y2="12"></line>
-      <line x1="3" y1="6" x2="21" y2="6"></line>
-      <line x1="3" y1="18" x2="21" y2="18"></line>
-    </svg>
-  </symbol>
-  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
-    <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
-      <polyline points="9 18 15 12 9 6"></polyline>
-    </svg>
-  </symbol>
-  <symbol id="svg-sun" viewBox="0 0 24 24">
-    <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
-      <circle cx="12" cy="12" r="5"></circle>
-      <line x1="12" y1="1" x2="12" y2="3"></line>
-      <line x1="12" y1="21" x2="12" y2="23"></line>
-      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-      <line x1="1" y1="12" x2="3" y2="12"></line>
-      <line x1="21" y1="12" x2="23" y2="12"></line>
-      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-    </svg>
-  </symbol>
-  <symbol id="svg-moon" viewBox="0 0 24 24">
-    <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
-    </svg>
-  </symbol>
-  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
-    <title>Auto light/dark, in light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
-      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
-      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
-      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
-      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
-      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
-      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
-      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
-      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
-      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
-      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
-      <circle cx="14.5" cy="9.55" r="3.6"/>
-    </svg>
-  </symbol>
-  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
-    <title>Auto light/dark, in dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
-      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
-      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
-      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
-      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
-      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
-      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
-      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
-      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
-      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
-      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
-      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
-    </svg>
-  </symbol>
-  <symbol id="svg-pencil" viewBox="0 0 24 24">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
-      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
-      <path d="M13.5 6.5l4 4" />
-      <path d="M20 21l2 -2l-2 -2" />
-      <path d="M17 17l-2 2l2 2" />
-    </svg>
-  </symbol>
-  <symbol id="svg-eye" viewBox="0 0 24 24">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
-      <path
-        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
-      <path d="M20 21l2 -2l-2 -2" />
-      <path d="M17 17l-2 2l2 2" />
-    </svg>
-  </symbol>
-</svg>
-
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
-<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
-<label class="overlay sidebar-overlay" for="__navigation">
-  <div class="visually-hidden">Hide navigation sidebar</div>
-</label>
-<label class="overlay toc-overlay" for="__toc">
-  <div class="visually-hidden">Hide table of contents sidebar</div>
-</label>
-
-<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
-
-
-
-<div class="page">
-  <header class="mobile-header">
-    <div class="header-left">
-      <label class="nav-overlay-icon" for="__navigation">
-        <div class="visually-hidden">Toggle site navigation sidebar</div>
-        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
-      </label>
-    </div>
-    <div class="header-center">
-      <a href="index.html"><div class="brand">Documentation Cryptoactifs </div></a>
-    </div>
-    <div class="header-right">
-      <div class="theme-toggle-container theme-toggle-header">
-        <button class="theme-toggle">
-          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
-          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
-          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
-          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
-        </button>
-      </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
-        <div class="visually-hidden">Toggle table of contents sidebar</div>
-        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
-      </label>
-    </div>
-  </header>
-  <aside class="sidebar-drawer">
-    <div class="sidebar-container">
-      
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
-  
-  
-  <span class="sidebar-brand-text">Documentation Cryptoactifs </span>
-  
-</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
-  <input class="sidebar-search" placeholder="Recherche" name="q" aria-label="Recherche">
-  <input type="hidden" name="check_keywords" value="yes">
-  <input type="hidden" name="area" value="default">
-</form>
-<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <ul class="current">
-<li class="toctree-l1 has-children"><a class="reference internal" href="cryptomonnaies.html">Les cryptomonnaies</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Les cryptomonnaies</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="blockchain.html">La Blockchain</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of La Blockchain</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Le minage</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Le minage</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="defis_opportunites.html">Les défis et opportunités</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Les défis et opportunités</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="en_pratique.html">En pratique</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of En pratique</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
-</ul>
-</li>
-</ul>
-
-</div>
-</div>
-
-      </div>
-      
-    </div>
-  </aside>
-  <div class="main">
-    <div class="content">
-      <div class="article-container">
-        <a href="#" class="back-to-top muted-link">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
-          </svg>
-          <span>Back to top</span>
-        </a>
-        <div class="content-icon-container">
-          <div class="view-this-page">
-  <a class="muted-link" href="_sources/minage.rst.txt" title="View this page">
-    <svg><use href="#svg-eye"></use></svg>
-    <span class="visually-hidden">View this page</span>
-  </a>
-</div>
-<div class="theme-toggle-container theme-toggle-content">
-            <button class="theme-toggle">
-              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
-              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
-              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
-              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
-            </button>
-          </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
-            <div class="visually-hidden">Toggle table of contents sidebar</div>
-            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
-          </label>
-        </div>
-        <article role="main" id="furo-main-content">
-          <section id="le-minage">
-<h1>Le minage<a class="headerlink" href="#le-minage" title="Lien vers cette rubrique">¶</a></h1>
-<section id="c-est-quoi-le-minage">
-<h2>C’est quoi le minage<a class="headerlink" href="#c-est-quoi-le-minage" title="Lien vers cette rubrique">¶</a></h2>
-<p>Le minage preuve de travail (Proof of Work) consiste à créer de nouveaux blocs candidats, à les remplir d’informations relatives à des transactions ou opérations valides, à effectuer le travail, puis en cas de réussite, à les ajouter à la blockchain afin que ces données soient visibles et vérifiables par l’ensemble du réseau. Lorsqu’ils arrivent à créer un bloc, les mineurs reçoivent généralement une récompense en cryptomonnaie, ce qui constitue une incitation financière à accomplir cette tâche.</p>
-<p>Pour pouvoir ajouter un bloc à la chaîne, les mineurs doivent résoudre ce que l’on appelle une « énigme cryptographique », c’est-à-dire, plus techniquement, trouver un hachage valide correspondant au bloc en question.</p>
-<p>A noter que dans les réseaux fonctionnant selon le mécanisme de consensus dit Proof of Stake (PoS), on ne parle pas de « mineurs » mais plutôt de « validateurs ». Le terme « minage » s’applique strictement aux réseaux qui utilisent la preuve de travail (Proof of Work, ou PoW) comme méthode de consensus.</p>
-</section>
-<section id="theorie-du-consensus">
-<h2>Théorie du consensus<a class="headerlink" href="#theorie-du-consensus" title="Lien vers cette rubrique">¶</a></h2>
-<p>Mais pourquoi ce type de minage est-il apparu en 2008 avec Bitcoin, et non auparavant ?</p>
-<p>Il existe sur Internet une petite communauté appelée les Cypherpunks — un nom formé à partir des mots anglais cypher (signifiant « chiffre », au sens de code secret) et punk. Il s’agit d’un calque du terme cyberpunk, désignant un genre littéraire dépeignant un futur dystopique dans lequel la haute technologie coexiste avec la décadence sociale, le vice et le crime, comme illustré dans le roman et le film Ready Player One.</p>
-<p>Les Cypherpunks développent des logiciels ayant pour objectif de promouvoir la liberté sous toutes ses formes dans le domaine numérique. L’un de leurs sujets historiques récurrents concerne le transfert de valeur de manière décentralisée sur Internet, c’est-à-dire sans recourir à un tiers de confiance. Pour concrétiser cette vision, ils devaient surmonter un obstacle majeur : le problème de la double dépense. Celui-ci suppose notamment la nécessité de parvenir à un consensus décentralisé sur l’ordre des transactions. Par exemple, si une même personne (Mallory, prénom typiquement utilisé pour représenter un attaquant malveillant d’un système informatique) tente d’envoyer les mêmes fonds à deux personnes différentes (Alice et Bob, deux autres prénoms typiquement utilisés pour représenter des utilisateurs normaux), le système doit pouvoir déterminer, de manière décentralisée, laquelle des deux transactions est valide et rejeter l’autre.</p>
-<p>Ce type de consensus est relativement simple à atteindre dans des architectures centralisées ou fédérées, où un ou plusieurs serveurs — se faisant mutuellement confiance — collaborent pour valider l’ordre des opérations. C’est typiquement ce que font les banques pour le traitement de l’ordre d’arrivée des chèques. En revanche, dans un système totalement ouvert et décentralisé, le problème devient considérablement plus complexe. En 1985, trois chercheurs — Fischer, Lynch et Paterson — ont démontré, à travers le théorème d’impossibilité FLP, qu’il est théoriquement impossible de garantir un consensus fiable si l’on autorise les participants du consensus à entrer et sortir librement. Une autre version du même  problème a été popularisée sous le nom du “problème des généraux byzantins” où seules des solutions avec des architectures centralisées ou fédérées permettaient la résolution des contraintes.</p>
-<p>Face à cette impasse, l’innovation de Satoshi Nakamoto en 2008 a marqué un tournant décisif. En inventant le mécanisme de preuve de travail (Proof of Work, ou PoW), il a non seulement donné naissance à Bitcoin, mais également à l’ensemble de l’industrie des blockchains et des crypto-actifs. Ce nouveau type de consensus rend possible, dans la pratique, ce que la théorie considérait comme irréalisable, à condition qu’un acteur malveillant ne dispose pas d’une chance extraordinaire suffisante pour compromettre le système — un événement dont la probabilité est extrêmement faible, bien que non nulle —  ou d’une puissance de calcul largement supérieure à celle des autres acteurs (ce qui est possible, mais en l’état du réseau Bitcoin actuel, ceci nécessiterait des moyens pharaoniques et provoquerait probablement une course à la puissance de calcul pour protéger le réseau).
-Cette probabilité extrêmement faible peut être illustrée par une analogie : elle équivaut à trouver un grain de sable particulier parmi tous ceux de la planète Terre, et parmi ceux de cinq milliards de planètes Terre. (Détail du calcul : on estime à 10¹⁹ le nombre de grains de sable sur Terre, tandis qu’environ 2^95,5 ≈ 5 × 10²⁸ hachages ont été réalisés depuis le bloc Genesis).</p>
-<p>Ainsi, le consensus par preuve de travail, également appelé consensus Nakamoto, a ouvert tout un nouveau champ des possibles.</p>
-</section>
-<section id="le-hachage-en-theorie">
-<h2>Le hachage en théorie<a class="headerlink" href="#le-hachage-en-theorie" title="Lien vers cette rubrique">¶</a></h2>
-<p>Pour comprendre le fonctionnement du consensus utilisé par Bitcoin, il est essentiel de commencer par expliquer la notion de hachage cryptographique.</p>
-<p>Une fonction de hachage cryptographique peut être vue comme une fonction mathématique notée f(x) = y, où x peut représenter un nombre, un fichier, ou même un bloc entier, et où y est un nombre généralement exprimé en hexadécimal. La propriété fondamentale de ces fonctions réside dans le fait que y est toujours inférieur à un grand nombre donné (par exemple 2^256), et semble aléatoire par rapport à x, tout en étant rapide à calculer.</p>
-<p>Concrètement, il est extrêmement difficile (impossible en pratique) de retrouver un x₁ à partir d’un y₁ donné tel que f(x₁) = y₁, mais, en revanche, il est très simple de vérifier qu’un x₁ est correct une fois qu’il a été trouvé, simplement en recalculant f(x₁) et en comparant le résultat avec y₁.</p>
-<p>Par ailleurs, en raison de la nature pseudo-aléatoire de la sortie y, il est possible d’estimer le nombre moyen d’essais nécessaires pour obtenir une sortie y₀ présentant une certaine caractéristique. Par exemple, si l’on cherche un x₀ tel que f(x₀) soit un multiple de 10, moins d’une dizaine d’essais aléatoires de valeurs de x₀ suffiraient en moyenne. De la même manière, obtenir une valeur de f(x₀₀) multiple de 100 requerra généralement moins d’une centaine d’essais. Cela découle du fait que les sorties de la fonction de hachage sont uniformément réparties.</p>
-<p>Aujourd’hui, en avril 2025, les mineurs de Bitcoin effectuent environ un zetta-essai par seconde, soit 10²¹ essais par seconde (1 000 000 000 000 000 000 000 tentatives chaque seconde), dans le but de trouver un x₀₀₀ tel que f(x₀₀₀) commence par un certain nombre de zéros, conformément à la difficulté fixée par le protocole Bitcoin. Ce nombre de tentatives colossales reflète une puissance de calcul effective très élevée, impliquant une consommation électrique réelle. Ainsi, un lien thermodynamique se crée entre le coût de production d’un Bitcoin (en énergie) et sa valeur sur le marché, ce qui ancre économiquement le mécanisme de minage dans le monde physique.</p>
-</section>
-<section id="le-hachage-en-pratique">
-<h2>Le hachage en pratique<a class="headerlink" href="#le-hachage-en-pratique" title="Lien vers cette rubrique">¶</a></h2>
-<p>En pratique, le processus de hachage consiste à prendre l’ensemble des informations contenues dans un bloc, à y ajouter une valeur arbitraire appelée nonce, puis à appliquer une fonction de hachage — en l’occurrence, SHA-256 dans le cas du protocole Bitcoin. Le résultat de cette opération est une valeur hexadécimale fixe de 64 caractères, propre à cette fonction.</p>
-<p>Il convient de noter que la fonction de hachage utilisée varie selon les cryptomonnaies. Par exemple, tandis que Bitcoin repose sur SHA-256, d’autres comme le Litecoin utilisent une fonction différente, appelée Scrypt.</p>
-<p>L’une des propriétés fondamentales des fonctions de hachage est leur sensibilité extrême aux données d’entrée. En effet, la moindre modification — même d’un seul caractère — dans le contenu du bloc entraînera une modification radicale du hachage obtenu. À l’inverse, tant que les données restent inchangées, le hachage produit sera toujours identique. En ce sens, le hachage d’un bloc agit comme une signature numérique, assurant l’intégrité de son contenu.</p>
-<p>Cependant, si les données transactionnelles du bloc ne peuvent pas être altérées (puisqu’elles sont validées), comment les mineurs peuvent-ils générer des hachages différents à chaque tentative ? La réponse réside dans l’existence d’un champ spécifique du bloc appelé le nonce. Ce nombre, modifiable à volonté par les mineurs, est intégré au calcul du hachage et constitue la principale variable d’ajustement lors du processus de minage.</p>
-</section>
-<section id="la-cible-de-difficulte">
-<h2>La cible de difficulté<a class="headerlink" href="#la-cible-de-difficulte" title="Lien vers cette rubrique">¶</a></h2>
-<p>Mais comment déterminer si le hachage généré permet au bloc candidat d’être accepté par le protocole ? C’est là qu’intervient la notion de cible de difficulté. Cette cible représente une valeur seuil fixée par le réseau. Pour qu’un hachage soit considéré comme valide, il doit être inférieur à cette cible.</p>
-<p>Les mineurs procèdent donc à un très grand nombre de tentatives en faisant varier le nonce, jusqu’à obtenir un hachage satisfaisant la condition imposée par la cible. Étant donné la distribution aléatoire des hachages, plus la cible est basse, plus il est statistiquement difficile de trouver un hachage valide, ce qui rapproche le processus d’un jeu de hasard informatique à grande échelle.</p>
-<p>Par exemple, au 16 avril 2025, la difficulté du réseau Bitcoin était telle qu’il fallait obtenir un hachage débutant par environ 19 zéros consécutifs. Le bloc n°892731 en fournit une illustration concrète avec le hachage suivant :</p>
-<p>00000000000000000001874c69ad40644185e6fa645cde7bd2a421b6de785ca7</p>
-<p>Ce niveau de difficulté implique que plus elle augmente, plus le temps et la puissance de calcul nécessaires pour trouver un hachage valide augmentent également, même pour des machines spécialisées comme les ASICs.</p>
-<p>Il est légitime de se demander pourquoi ce processus doit être difficile à réaliser.</p>
-<p>L’objectif fondamental d’une blockchain PoW est de parvenir à un consensus distribué entre les participants d’un réseau : autrement dit, de s’accorder collectivement sur une version unique et vérifiable de l’historique des transactions. Pour y parvenir, les mineurs s’appuient sur la plus longue chaîne valide disponible, cette longueur étant déterminée non par le nombre de blocs, mais par la quantité de travail cryptographique (ou preuve de travail) investie dans sa construction. Ainsi, la chaîne ayant demandé le plus de puissance de calcul (et donc à priori d’énergie) est considérée comme la référence consensuelle.</p>
-<p>Cette difficulté intégrée joue un rôle central dans la sécurité du protocole. Si l’ajout de blocs était trivial, un acteur malveillant pourrait réaliser une transaction, puis inonder le réseau avec une chaîne parallèle (dans laquelle il garderait ses fonds) qu’il aurait lui-même générée à moindre coût. Grâce à la difficulté de minage, une telle attaque devient irréaliste : le processus est volontairement ralenti, de sorte que, sur Bitcoin, un nouveau bloc est extrait toutes les 10 minutes en moyenne. Ce délai sert de barrière naturelle contre le spam, tout en maintenant un rythme de validation régulier.</p>
-<p>Un enjeu majeur réside cependant dans la possibilité pour un acteur d’augmenter sa puissance de calcul afin de miner plus rapidement. Pour contrer ce risque, Bitcoin intègre un mécanisme d’ajustement dynamique de la difficulté, conçu par Satoshi Nakamoto. Ce mécanisme garantit que, quelle que soit la puissance globale du réseau, le temps moyen pour miner un bloc reste stable, aux alentours de 10 minutes.</p>
-<dl class="simple">
-<dt>Concrètement, la difficulté est réévaluée tous les 2016 blocs, soit environ toutes les deux semaines. Le protocole mesure alors le temps qu’il a fallu pour produire ces 2016 blocs.</dt><dd><ul class="simple">
-<li><p>Si ce délai dépasse les deux semaines (soit 20 160 minutes), la difficulté est réduite ; s’il est inférieur, elle est augmentée. Le principe repose sur une simple proportion :</p></li>
-<li><p>Si le délai est supérieur à 2 semaines, la fraction est inférieure à 1 → la nouvelle difficulté diminue.</p></li>
-<li><p>Si le délai est inférieur à 2 semaines, la fraction est supérieure à 1 → la nouvelle difficulté augmente.</p></li>
-</ul>
-</dd>
-</dl>
-<p>La valeur cible (seuil que doit dépasser le hachage pour être valide) est ajustée en conséquence : plus la difficulté est élevée, plus la valeur cible est faible, et donc plus il est difficile de trouver un hachage satisfaisant. Pour éviter des variations trop brusques, la difficulté ne peut ni quadrupler, ni être divisée par plus de quatre à chaque ajustement.</p>
-<p>Le minage s’apparente à une compétition de calcul, où chacun cherche à deviner le hachage valide en premier afin de recevoir la récompense associée. Les mineurs disposant de matériel plus performant, notamment des circuits intégrés spécialisés (ASICs), sont en mesure d’effectuer davantage de tentatives par seconde par Watt et augmentent ainsi leurs chances de succès.</p>
-<p>Néanmoins, même avec des équipements très puissants, les probabilités individuelles de réussite restent faibles. Actuellement, en moyenne, un mineur isolé peut espérer découvrir un bloc tous les 40 ans, ce qui rend cette stratégie peu rentable. C’est pourquoi la plupart des mineurs rejoignent des pools de minage, où les ressources sont mutualisées pour augmenter la fréquence des récompenses.</p>
-<p>Avec l’amélioration continue des performances informatiques et la croissance du nombre de participants, la difficulté doit être ajustée en permanence afin de maintenir un temps moyen de 10 minutes par bloc (ou block time). Ainsi, plus la puissance de calcul du réseau augmente, plus la difficulté s’accroît ; inversement, si cette puissance diminue, la difficulté est réduite.</p>
-<p>Ce mécanisme d’ajustement automatique de la difficulté, bien que souvent sous-estimé, constitue l’une des contributions les plus brillantes et fondamentales du système imaginé par Satoshi Nakamoto. Il permet à la blockchain Bitcoin de conserver un rythme stable, prévisible et résilient, indépendamment des fluctuations du réseau ou des avancées technologiques.</p>
-</section>
-<section id="le-systeme-de-recompenses">
-<h2>Le système de récompenses<a class="headerlink" href="#le-systeme-de-recompenses" title="Lien vers cette rubrique">¶</a></h2>
-<p>Le minage de cryptomonnaies constitue une activité exigeante, tant sur le plan matériel qu’énergétique. Il nécessite en effet des équipements spécialisés onéreux, une consommation électrique importante, ainsi qu’un investissement en temps conséquent. Dès lors, une question s’impose : pourquoi autant de personnes choisissent-elles de s’engager dans une telle entreprise ? La réponse tient dans l’existence d’un système d’incitations économiques soigneusement conçu, qui motive les mineurs à participer activement à la sécurisation du réseau.
-Sans ce système de récompenses, il serait peu probable que des individus consacrent volontairement leurs ressources au bon fonctionnement d’un protocole décentralisé.</p>
-<p>Les principaux incitatifs mis en place sont les suivants :</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Le système de récompenses : pour chaque bloc miné, les mineurs reçoivent une récompense sous forme de fractions de cryptomonnaies. De fait, cette récompense devient un incitatif puissant qui encourage les mineurs à investir dans du matériel de minage de haute qualité et à consacrer leur temps et leur énergie au maintien du réseau.</p></li>
-<li><p>Les frais de transaction : en plus de la récompense par bloc, les mineurs gagnent également des frais de transaction. Ces frais sont payés par les utilisateurs qui souhaitent que leurs transactions soient traitées plus rapidement. Vous l’aurez compris, ils constituent une source de revenus supplémentaire pour les mineurs et encouragent la validation rapide des transactions.</p></li>
-<li><p>Les événements de « Halving » : dans certains réseaux crypto, comme Bitcoin (où le halving a lieu tous les 210 000 blocs, soit à peu près tous les quatre ans), la récompense de minage est divisée par deux à intervalles réguliers, un événement connu sous le nom de « halving”. Ce mécanisme réduit l’offre de nouvelles monnaies, ce qui peut entraîner une augmentation de leur valeur et compenser la réduction de la récompense pour les mineurs. Par exemple, en 2009, les récompenses par bloc étaient de 50 BTC, mais le Bitcoin ne valait presque rien comparé à son cours actuel.</p></li>
-</ul>
-</div></blockquote>
-<div class="toctree-wrapper compound">
-</div>
-</section>
-</section>
-
-        </article>
-      </div>
-      <footer>
-        
-        <div class="related-pages">
-          <a class="next-page" href="defis_opportunites.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">Les défis et opportunités</div>
-              </div>
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="blockchain.html">
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-              <div class="page-info">
-                <div class="context">
-                  <span>Previous</span>
-                </div>
-                
-                <div class="title">La Blockchain</div>
-                
-              </div>
-            </a>
-        </div>
-        <div class="bottom-of-page">
-          <div class="left-details">
-            <div class="copyright">
-                Copyright &#169; 2025, Camille
-            </div>
-            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-            
-            <a href="https://github.com/pradyunsg/furo">Furo</a>
-            
-          </div>
-          <div class="right-details">
-            
-          </div>
-        </div>
-        
-      </footer>
-    </div>
-    <aside class="toc-drawer">
-      
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Le minage</a><ul>
-<li><a class="reference internal" href="#c-est-quoi-le-minage">C’est quoi le minage</a></li>
-<li><a class="reference internal" href="#theorie-du-consensus">Théorie du consensus</a></li>
-<li><a class="reference internal" href="#le-hachage-en-theorie">Le hachage en théorie</a></li>
-<li><a class="reference internal" href="#le-hachage-en-pratique">Le hachage en pratique</a></li>
-<li><a class="reference internal" href="#la-cible-de-difficulte">La cible de difficulté</a></li>
-<li><a class="reference internal" href="#le-systeme-de-recompenses">Le système de récompenses</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
-      
-      
-    </aside>
-  </div>
-</div><script src="_static/documentation_options.js?v=d1a510d7"></script>
-    <script src="_static/doctools.js?v=9bcbadda"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/scripts/furo.js?v=5fa4622c"></script>
-    <script src="_static/translations.js?v=e6b791cb"></script>
-    </body>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Les cryptomonnaies</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" type="image/png" href="Images/testfinal.png">
+</head>
+<body>
+	<div class="page-container">
+	<nav class="sidebar">
+  <ul>
+    <li>
+      <a href="index.html" class="title">Les cryptomonnaies</a>
+      <ul class="submenu">
+        <li><a href="index.html#cryptomonnaies-crypto-actifs-de-quoi-parle-t-on">Cryptomonnaies, crypto-actifs : de quoi parle-t-on ?</a></li>
+        <li><a href="index.html#crypto-actifs-differents-usages">Crypto-actifs : différents usages</a></li>
+		<li><a href="index.html#les-cryptomonnaies-une-monnaie-a-part-entiere">Les cryptomonnaies, une monnaie à part entière ?</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="blockchain.html" class="title">La Blockchain</a>
+      <ul class="submenu">
+        <li><a href="blockchain.html#qu-est-ce-que-la-blockchain">Qu'est-ce que la blockchain ?</a></li>
+        <li><a href="blockchain.html#les-differents-types-de-blockchains">Les différents types de blockchains</a></li>
+		<li><a href="blockchain.html#plusieurs-mecanismes-de-consensus">Plusieurs mécanismes de consensus</a></li>
+	  </ul>
+    </li>
+	<li>
+      <a href="minage.html" class="title">Le minage</a>
+      <ul class="submenu">
+        <li><a href="minage.html#qu-est-ce-que-le-minage">Qu'est-ce que le minage ?</a></li>
+        <li><a href="minage.html#theorie-du-consensus">Théorie du consensus</a></li>
+		<li><a href="minage.html#le-hachage-en-theorie">Le hachage en théorie</a></li>
+		<li><a href="minage.html#le-hachage-en-pratique">Le hachage en pratique</a></li>
+		<li><a href="minage.html#la-cible-de-difficulte">La cible de difficulté</a></li>
+		<li><a href="minage.html#le-systeme-de-recompenses">Le système de récompenses</a></li>
+	  </ul>
+    </li>
+	<li>
+      <a href="defis_opportunites.html" class="title defis-title">Défis et opportunités environnementales</a>
+      <ul class="submenu">
+        <li><a href="defis_opportunites.html#empreinte-ecologique">Empreinte écologique</a></li>
+        <li><a href="defis_opportunites.html#le-challenge-des-enr">Le challenge des ENR</a></li>
+		<li><a href="defis_opportunites.html#la-problematique-du-methane">La problématique du méthane</a></li>
+	  </ul>
+    </li>
+	<li>
+      <a href="en_pratique.html" class="title">En pratique</a>
+      <ul class="submenu">
+        <li><a href="en_pratique.html#achat-de-crypto-actifs">Achat de crypto-actifs</a></li>
+        <li><a href="en_pratique.html#conservation-des-actifs">Conservation des actifs</a></li>
+		<li><a href="en_pratique.html#taxes-et-obligations-fiscales">Taxes et obligations fiscales</a></li>
+	  </ul>
+    </li>
+  </ul>
+	</nav>
+	<header class="page-header">
+		<img src="Images/logo-camille.png" alt="Logo" class="header-image">
+		<h1>Krypto-numisma</h1>
+	</header>
+	<div class="main-content">
+    <h1>Le minage</h1>
+    <section id="qu-est-ce-que-le-minage">
+        <h2>Qu'est-ce que le minage ?</h2>
+		<div class="parent ligne">
+			<div class="bloc-image-gauche-grande">
+				<img class="image-container-left image-ferme-minage" src="Images/ferme-minage.png" alt="Illustration d'une ferme de minage.">
+				<div class="image-description-gauche">
+					Illustration d'une ferme de minage.
+				</div>
+			</div>
+			<div class="texte-droite">
+				<p>Le minage preuve de travail (Proof of Work) consiste à créer de nouveaux blocs candidats, à les remplir d’informations relatives à des transactions ou opérations valides, à effectuer le travail, puis en cas de réussite, à les ajouter à la blockchain afin que ces données soient visibles et vérifiables par l’ensemble du réseau. Lorsqu’ils arrivent à créer un bloc, les mineurs reçoivent généralement une récompense en cryptomonnaie, ce qui constitue une incitation financière à accomplir cette tâche.</p>     
+			</div>
+		</div>
+        <p>Pour pouvoir ajouter un bloc à la chaîne, les mineurs doivent résoudre ce que l’on appelle une "énigme cryptographique", c’est-à-dire, plus techniquement, trouver un hachage valide correspondant au bloc en question.</p>
+        <p>A noter que dans les réseaux fonctionnant selon le mécanisme de consensus dit Proof of Stake (PoS), on ne parle pas de "mineurs" mais plutôt de "validateurs". Le terme "minage" s’applique strictement aux réseaux qui utilisent la preuve de travail (Proof of Work, ou PoW) comme méthode de consensus.</p>
+    </section>
+    <section id="theorie-du-consensus">
+        <h2>Théorie du consensus</h2>
+        <p>Mais pourquoi ce type de minage est-il apparu en 2008 avec Bitcoin, et non auparavant ?</p>
+        <div class="parent ligne">
+			<div class="bloc-image-gauche-grande">
+				<img class="image-container-left image-cypherpunks" src="Images/cypherpunks.jpg" alt="Couverture du magazine de culture numérique Wired, accordant sa une aux Cypherpunks.">
+				<div class="image-description-gauche">
+					Couverture du magazine de culture numérique Wired, accordant sa une aux Cypherpunks.
+				</div>
+			</div>
+			<div class="texte-droite-petite">
+				<p>Il existe sur Internet une petite communauté appelée les <a href="https://start-in-blockchain.fr/cypherpunk-bitcoin-cryptowars/">Cypherpunks</a> — un nom formé à partir des mots anglais cypher (signifiant "chiffre", au sens de code secret) et punk. Il s’agit d’un calque du terme cyberpunk, désignant un genre littéraire dépeignant un futur dystopique dans lequel la haute technologie coexiste avec la décadence sociale, le vice et le crime, comme illustré dans le roman et le film Ready Player One.</p>     
+			</div>
+		</div>
+		<p>Les Cypherpunks développent des logiciels ayant pour objectif de promouvoir la liberté sous toutes ses formes dans le domaine numérique. L’un de leurs sujets historiques récurrents concerne le transfert de valeur de manière décentralisée sur Internet, c’est-à-dire sans recourir à un tiers de confiance. Pour concrétiser cette vision, ils devaient surmonter un obstacle majeur : le problème de la double dépense. Celui-ci suppose notamment la nécessité de parvenir à un consensus décentralisé sur l’ordre des transactions. Par exemple, si une même personne (Mallory, prénom typiquement utilisé pour représenter un attaquant malveillant d’un système informatique) tente d’envoyer les mêmes fonds à deux personnes différentes (<a href="https://www.techno-science.net/glossaire-definition/Alice-et-Bob.html">Alice et Bob</a>, deux autres prénoms typiquement utilisés pour représenter des utilisateurs normaux), le système doit pouvoir déterminer, de manière décentralisée, laquelle des deux transactions est valide et rejeter l’autre.</p>
+		<p>Ce type de consensus est relativement simple à atteindre dans des architectures centralisées ou fédérées, où un ou plusieurs serveurs — se faisant mutuellement confiance — collaborent pour valider l’ordre des opérations. C’est typiquement ce que font les banques pour le traitement de l’ordre d’arrivée des chèques. En revanche, dans un système totalement ouvert et décentralisé, le problème devient considérablement plus complexe. En 1985, trois chercheurs — Fischer, Lynch et Paterson — ont démontré, à travers le théorème d’impossibilité FLP, qu’il est théoriquement impossible de garantir un consensus fiable si l’on autorise les participants du consensus à entrer et sortir librement.</p>
+		<div class="parent ligne-inverse">
+			<div class="texte-gauche-grand">
+				<p> Une autre version du même  problème a été popularisée sous le nom du "<a href="https://viresinnumeris.fr/probleme-generaux-byzantins/">problème des généraux byzantins</a>" où seules des solutions avec des architectures centralisées ou fédérées permettaient la résolution des contraintes.</p>   
+			</div>				
+			<div class="bloc-image-droite-grande">
+				<img class="image-container-right image-pb-generaux-byzantins" src="Images/byzantine-generals-problem.png" alt="Illustration du problème des généraux byzantins par Leslie Lamport, grand spécialiste de l'informatique distribuée.">
+				<div class="image-description-droite-grande">
+					Illustration du problème des généraux byzantins par <a href="https://fr.wikipedia.org/wiki/Leslie_Lamport">Leslie Lamport</a>, grand spécialiste de l'informatique distribuée.
+				</div>
+			</div>
+		</div>
+		<p>Face à cette impasse, l’innovation de Satoshi Nakamoto en 2008 a marqué un tournant décisif. En inventant le mécanisme de preuve de travail (Proof of Work, ou PoW), il a non seulement donné naissance à Bitcoin, mais également à l’ensemble de l’industrie des blockchains et des crypto-actifs. Ce nouveau type de consensus rend possible, dans la pratique, ce que la théorie considérait comme irréalisable, à condition qu’un acteur malveillant ne dispose pas d’une chance extraordinaire suffisante pour compromettre le système — un événement dont la probabilité est extrêmement faible, bien que non nulle —  ou d’une puissance de calcul largement supérieure à celle des autres acteurs (ce qui est possible, mais en l’état du réseau Bitcoin actuel, ceci nécessiterait des moyens pharaoniques et provoquerait probablement une course à la puissance de calcul pour protéger le réseau).Cette probabilité extrêmement faible peut être illustrée par une analogie : elle équivaut à trouver un grain de sable particulier parmi tous ceux de la planète Terre, et parmi ceux de cinq milliards de planètes Terre. <br> (Détail du calcul : on estime à 10<sup>19</sup> le nombre de grains de sable sur Terre, tandis qu’environ 2<sup>95,5 </sup><span class="approximatif"></span> 5 × 10<sup>28</sup> hachages ont été réalisés depuis le bloc Genesis).</p>
+		<p>Ainsi, le consensus par preuve de travail, également appelé consensus Nakamoto, a ouvert tout un nouveau champ des possibles.</p>
+    </section>
+    <section id="le-hachage-en-theorie">
+        <h2>Le hachage en théorie</h2>
+        <p>Pour comprendre le fonctionnement du consensus utilisé par Bitcoin, il est essentiel de commencer par expliquer la notion de hachage cryptographique.</p>
+        <p>Une fonction de hachage cryptographique peut être vue comme une fonction mathématique notée f(x) = y, où x peut représenter un nombre, un fichier, ou même un bloc entier, et où y est un nombre généralement exprimé en hexadécimal. La propriété fondamentale de ces fonctions réside dans le fait que y est toujours inférieur à un grand nombre donné (par exemple 2<sup>256</sup>), et semble aléatoire par rapport à x, tout en étant rapide à calculer.</p>
+        <p>Concrètement, il est extrêmement difficile (impossible en pratique) de retrouver un x<sub>1</sub> à partir d’un y<sub>1</sub> donné tel que f(x<sub>1</sub>) = y<sub>1</sub>, mais, en revanche, il est très simple de vérifier qu’un x<sub>1</sub> est correct une fois qu’il a été trouvé, simplement en recalculant f(x<sub>1</sub>) et en comparant le résultat avec y<sub>1</sub>.</p>
+        <p>Par ailleurs, en raison de la nature pseudo-aléatoire de la sortie y, il est possible d’estimer le nombre moyen d’essais nécessaires pour obtenir une sortie y<sub>0</sub> présentant une certaine caractéristique. Par exemple, si l’on cherche un x<sub>0</sub> tel que f(x<sub>0</sub>) soit un multiple de 10, moins d’une dizaine d’essais aléatoires de valeurs de x<sub>0</sub> suffiraient en moyenne. De la même manière, obtenir une valeur de f(x<sub>00</sub>) multiple de 100 requerra généralement moins d’une centaine d’essais. Cela découle du fait que les sorties de la fonction de hachage sont uniformément réparties.</p>
+        <p>Aujourd’hui, en avril 2025, les mineurs de Bitcoin effectuent environ un zetta-essai par seconde, soit 10<sup>21</sup> essais par seconde (1 000 000 000 000 000 000 000 tentatives chaque seconde), dans le but de trouver un x<sub>000</sub> tel que f(x<sub>000</sub>) commence par un certain nombre de zéros, conformément à la difficulté fixée par le protocole Bitcoin. Ce nombre de tentatives colossales reflète une puissance de calcul effective très élevée, impliquant une consommation électrique réelle. Ainsi, un lien thermodynamique se crée entre le coût de production d’un Bitcoin (en énergie) et sa valeur sur le marché, ce qui ancre économiquement le mécanisme de minage dans le monde physique.</p>
+    </section>
+	<section id="le-hachage-en-pratique">
+        <h2>Le hachage en pratique</h2>
+        <p>En pratique, le processus de hachage consiste à prendre l’ensemble des informations contenues dans un bloc, à y ajouter une valeur arbitraire appelée nonce, puis à appliquer une fonction de hachage — en l’occurrence, SHA-256 dans le cas du protocole Bitcoin. Le résultat de cette opération est une valeur hexadécimale fixe de 64 caractères, propre à cette fonction.</p>
+		<div class="parent ligne">
+			<div class="bloc-image-gauche-grande">
+				<img class="image-container-left image-SHA-256" src="Images/SHA-256.png" alt="Illustration d'une fonction de hachage.">
+				<div class="image-description-gauche">
+					Illustration d'une fonction de hachage.
+				</div>
+			</div>
+			<div class="texte-droite-petite-plus">
+				<p> Il convient de noter que la fonction de hachage utilisée varie selon les cryptomonnaies. Par exemple, tandis que Bitcoin repose sur SHA-256, d’autres comme le Litecoin utilisent une fonction différente, appelée Scrypt.</p>     
+			</div>
+		</div>
+        <p>L’une des propriétés fondamentales des fonctions de hachage est leur sensibilité extrême aux données d’entrée. En effet, la moindre modification — même d’un seul caractère — dans le contenu du bloc entraînera une modification radicale du hachage obtenu. À l’inverse, tant que les données restent inchangées, le hachage produit sera toujours identique. En ce sens, le hachage d’un bloc agit comme une signature numérique, assurant l’intégrité de son contenu.</p>
+        <p>Cependant, si les données transactionnelles du bloc ne peuvent pas être altérées (puisqu’elles sont validées), comment les mineurs peuvent-ils générer des hachages différents à chaque tentative ? La réponse réside dans l’existence d’un champ spécifique du bloc appelé le nonce. Ce nombre, modifiable à volonté par les mineurs, est intégré au calcul du hachage et constitue la principale variable d’ajustement lors du processus de minage.</p>
+    </section>
+	<section id="la-cible-de-difficulte">
+        <h2>La cible de difficulté</h2>
+        <p>Mais comment déterminer si le hachage généré permet au bloc candidat d’être accepté par le protocole ? C’est là qu’intervient la notion de cible de difficulté. Cette cible représente une valeur seuil fixée par le réseau. Pour qu’un hachage soit considéré comme valide, il doit être inférieur à cette cible.</p>
+        <p>Les mineurs procèdent donc à un très grand nombre de tentatives en faisant varier le nonce, jusqu’à obtenir un hachage satisfaisant la condition imposée par la cible. Étant donné la distribution aléatoire des hachages, plus la cible est basse, plus il est statistiquement difficile de trouver un hachage valide, ce qui rapproche le processus d’un jeu de hasard informatique à grande échelle.</p>
+        <p>Par exemple, au 16 avril 2025, la difficulté du réseau Bitcoin était telle qu’il fallait obtenir un hachage débutant par environ 19 zéros consécutifs. Le bloc n°892731 en fournit une illustration concrète avec le hachage suivant :</p>
+        <p><span class="special_hash">00000000000000000001874c69ad40644185e6fa645cde7bd2a421b6de785ca7</span></p>
+        <p>Ce niveau de difficulté implique que plus elle augmente, plus le temps et la puissance de calcul nécessaires pour trouver un hachage valide augmentent également, même pour des machines spécialisées comme les <a href="https://blog.greenbull-campus.fr/guides/immobilier/patrimoine/diversifier/miner-avec-asic">ASICs</a>.</p>
+        <p>Il est légitime de se demander pourquoi ce processus doit être difficile à réaliser.</p>
+        <p>L’objectif fondamental d’une blockchain PoW est de parvenir à un consensus distribué entre les participants d’un réseau : autrement dit, de s’accorder collectivement sur une version unique et vérifiable de l’historique des transactions. Pour y parvenir, les mineurs s’appuient sur la plus longue chaîne valide disponible, cette longueur étant déterminée non par le nombre de blocs, mais par la quantité de travail cryptographique (ou preuve de travail) investie dans sa construction. Ainsi, la chaîne ayant demandé le plus de puissance de calcul (et donc à priori d’énergie) est considérée comme la référence consensuelle.</p>
+        <p>Cette difficulté intégrée joue un rôle central dans la sécurité du protocole. Si l’ajout de blocs était trivial, un acteur malveillant pourrait réaliser une transaction, puis inonder le réseau avec une chaîne parallèle (dans laquelle il garderait ses fonds) qu’il aurait lui-même générée à moindre coût. Grâce à la difficulté de minage, une telle attaque devient irréaliste : le processus est volontairement ralenti, de sorte que, sur Bitcoin, un nouveau bloc est extrait toutes les 10 minutes en moyenne. Ce délai sert de barrière naturelle contre le spam, tout en maintenant un rythme de validation régulier.</p>
+        <p>Un enjeu majeur réside cependant dans la possibilité pour un acteur d’augmenter sa puissance de calcul afin de miner plus rapidement. Pour contrer ce risque, Bitcoin intègre un mécanisme d’ajustement dynamique de la difficulté, conçu par Satoshi Nakamoto. Ce mécanisme garantit que, quelle que soit la puissance globale du réseau, le temps moyen pour miner un bloc reste stable, aux alentours de 10 minutes.</p>
+		<p>Concrètement, la difficulté est réévaluée tous les 2016 blocs, soit environ toutes les deux semaines. Le protocole mesure alors le temps qu’il a fallu pour produire ces 2016 blocs. Si ce délai dépasse les deux semaines (soit 20 160 minutes), la difficulté est réduite ; s’il est inférieur, elle est augmentée. Le principe repose sur une simple proportion :</p>
+		<ul>
+			<li>Si le délai est supérieur à 2 semaines, la fraction est inférieure à 1 <span class="fleche_fine"></span> la nouvelle difficulté diminue.</li>
+			<li>Si le délai est inférieur à 2 semaines, la fraction est supérieure à 1 <span class="fleche_fine"></span> la nouvelle difficulté augmente.</li>
+		</ul>
+		<p>La valeur cible (seuil que doit dépasser le hachage pour être valide) est ajustée en conséquence : plus la difficulté est élevée, plus la valeur cible est faible, et donc plus il est difficile de trouver un hachage satisfaisant. Pour éviter des variations trop brusques, la difficulté ne peut ni quadrupler, ni être divisée par plus de quatre à chaque ajustement.</p>
+		<p>Le minage s’apparente à une compétition de calcul, où chacun cherche à deviner le hachage valide en premier afin de recevoir la récompense associée. Les mineurs disposant de matériel plus performant, notamment des circuits intégrés spécialisés (ASICs), sont en mesure d’effectuer davantage de tentatives par seconde par Watt et augmentent ainsi leurs chances de succès.</p>
+		<p>Néanmoins, même avec des équipements très puissants, les probabilités individuelles de réussite restent faibles. Actuellement, en moyenne, un mineur isolé peut espérer découvrir un bloc tous les 40 ans, ce qui rend cette stratégie peu rentable. C’est pourquoi la plupart des mineurs rejoignent des <a href="https://www.bitpanda.com/academy/fr/lecons/quest-ce-quun-mining-pool-et-quel-est-son-fonctionnement/">pools de minage</a>, où les ressources sont mutualisées pour augmenter la fréquence des récompenses.</p>
+		<p>Avec l’amélioration continue des performances informatiques et la croissance du nombre de participants, la difficulté doit être ajustée en permanence afin de maintenir un temps moyen de 10 minutes par bloc (ou block time). Ainsi, plus la puissance de calcul du réseau augmente, plus la difficulté s’accroît ; inversement, si cette puissance diminue, la difficulté est réduite.</p>
+		<p>Ce mécanisme d’ajustement automatique de la difficulté, bien que souvent sous-estimé, constitue l’une des contributions les plus brillantes et fondamentales du système imaginé par Satoshi Nakamoto. Il permet à la blockchain Bitcoin de conserver un rythme stable, prévisible et résilient, indépendamment des fluctuations du réseau ou des avancées technologiques.</p>
+    </section>
+	<section id="le-systeme-de-recompenses">
+        <h2>Le système de récompenses</h2>
+        <p>Le minage de cryptomonnaies constitue une activité exigeante, tant sur le plan matériel qu’énergétique. Il nécessite en effet des équipements spécialisés onéreux, une consommation électrique importante, ainsi qu’un investissement en temps conséquent. Dès lors, une question s’impose : pourquoi autant de personnes choisissent-elles de s’engager dans une telle entreprise ? </p>
+		 <div class="parent ligne">
+			<div class="bloc-image-gauche-grande">
+				<img class="image-container-left image-time-chain-halving" src="Images/time-chain-halving.png" alt="					Visualisation circulaire du cycle de halving.">
+				<div class="image-description-gauche">
+					Visualisation circulaire du cycle de halving.
+				</div>
+			</div>
+			<div class="texte-droite-petite">
+				<p>La réponse tient dans l’existence d’un système d’incitations économiques soigneusement conçu, qui motive les mineurs à participer activement à la sécurisation du réseau. Sans ce système de récompenses, il serait peu probable que des individus consacrent volontairement leurs ressources au bon fonctionnement d’un protocole décentralisé.</p>     
+			</div>
+		</div>
+        <p>Les principaux incitatifs mis en place sont les suivants :</p>
+		<ul>
+			<li>Le système de récompenses : pour chaque bloc miné, les mineurs reçoivent une récompense sous forme de fractions de cryptomonnaies. De fait, cette récompense devient un incitatif puissant qui encourage les mineurs à investir dans du matériel de minage de haute qualité et à consacrer leur temps et leur énergie au maintien du réseau.</li>
+			<li>Les frais de transaction : en plus de la récompense par bloc, les mineurs gagnent également des frais de transaction. Ces frais sont payés par les utilisateurs qui souhaitent que leurs transactions soient traitées plus rapidement. Vous l’aurez compris, ils constituent une source de revenus supplémentaire pour les mineurs et encouragent la validation rapide des transactions.</li>
+			<li> Les événements de "Halving" : dans certains réseaux crypto, comme Bitcoin (où le halving a lieu tous les 210 000 blocs, soit à peu près tous les quatre ans), la récompense de minage est divisée par deux à intervalles réguliers, un événement connu sous le nom de "<a href="https://www.coinbase.com/fr/learn/crypto-basics/what-is-a-bitcoin-halving">halving</a>". Ce mécanisme réduit l’offre de nouvelles monnaies, ce qui peut entraîner une augmentation de leur valeur et compenser la réduction de la récompense pour les mineurs. Par exemple, en 2009, les récompenses par bloc étaient de 50 BTC, mais le Bitcoin ne valait presque rien comparé à son cours actuel.</li>
+		</ul>
+    </section>
+	<section>
+		<h2>Sources :</h2>
+		<ul style="list-style-type: square">
+			<li><em><a href="file:///C:/Users/camillebrenner2/Downloads/Dictionnaire%20de%20Bitcoin-1.pdf">Le dictionnaire de Bitcoin</a></em> écrit par Loïc Morel</li>
+			<li><em>L'élégance de Bitcoin</em> écrit par Ludovic Lars</li>
+			<li><em>Mastering Bitcoin</em> écrit par Andreas M.Antonopoulos</li>
+			<li>Site <a href="https://www.coinbase.com/fr/learn/crypto-basics/what-is-mining">coinbase</a></li>
+			<li>Site <a href="https://coinacademy.fr/academie/mining-crypto-monnaies/">coinacademy</a></li>
+			<li>Site <a href="https://kriptomat.io/fr/crypto-monnaies/quest-ce-que-le-minage-crypto-monnaies/">kriptomat</a></li>
+		</ul>
+	</section>
+	</div>
+	<nav class="pagination">
+	<div class="boutons-pagination">
+		<a href="blockchain.html" class="btn">Précédent</span></li>
+		<a href="defis_opportunites.html" class="btn">Suivant</a></li>
+	</div>
+	</nav>
+</body>
 </html>

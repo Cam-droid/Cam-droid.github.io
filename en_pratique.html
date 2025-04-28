@@ -1,360 +1,132 @@
-<!doctype html>
-<html class="no-js" lang="fr" data-content_root="./">
-  <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Recherche" href="search.html" /><link rel="prev" title="Les défis et opportunités" href="defis_opportunites.html" />
-
-    <!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
-        <title>En pratique - Documentation Cryptoactifs</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
-    
-    
-
-
-<style>
-  body {
-    --color-code-background: #f8f8f8;
-  --color-code-foreground: black;
-  
-  }
-  @media not print {
-    body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-    }
-    @media (prefers-color-scheme: dark) {
-      body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-      }
-    }
-  }
-</style></head>
-  <body>
-    
-    <script>
-      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
-    </script>
-    
-
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-  <symbol id="svg-toc" viewBox="0 0 24 24">
-    <title>Contents</title>
-    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
-      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
-    </svg>
-  </symbol>
-  <symbol id="svg-menu" viewBox="0 0 24 24">
-    <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
-      <line x1="3" y1="12" x2="21" y2="12"></line>
-      <line x1="3" y1="6" x2="21" y2="6"></line>
-      <line x1="3" y1="18" x2="21" y2="18"></line>
-    </svg>
-  </symbol>
-  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
-    <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
-      <polyline points="9 18 15 12 9 6"></polyline>
-    </svg>
-  </symbol>
-  <symbol id="svg-sun" viewBox="0 0 24 24">
-    <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
-      <circle cx="12" cy="12" r="5"></circle>
-      <line x1="12" y1="1" x2="12" y2="3"></line>
-      <line x1="12" y1="21" x2="12" y2="23"></line>
-      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-      <line x1="1" y1="12" x2="3" y2="12"></line>
-      <line x1="21" y1="12" x2="23" y2="12"></line>
-      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-    </svg>
-  </symbol>
-  <symbol id="svg-moon" viewBox="0 0 24 24">
-    <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
-    </svg>
-  </symbol>
-  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
-    <title>Auto light/dark, in light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
-      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
-      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
-      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
-      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
-      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
-      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
-      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
-      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
-      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
-      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
-      <circle cx="14.5" cy="9.55" r="3.6"/>
-    </svg>
-  </symbol>
-  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
-    <title>Auto light/dark, in dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
-      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
-      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
-      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
-      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
-      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
-      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
-      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
-      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
-      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
-      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
-      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
-    </svg>
-  </symbol>
-  <symbol id="svg-pencil" viewBox="0 0 24 24">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
-      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
-      <path d="M13.5 6.5l4 4" />
-      <path d="M20 21l2 -2l-2 -2" />
-      <path d="M17 17l-2 2l2 2" />
-    </svg>
-  </symbol>
-  <symbol id="svg-eye" viewBox="0 0 24 24">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
-      <path
-        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
-      <path d="M20 21l2 -2l-2 -2" />
-      <path d="M17 17l-2 2l2 2" />
-    </svg>
-  </symbol>
-</svg>
-
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
-<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
-<label class="overlay sidebar-overlay" for="__navigation">
-  <div class="visually-hidden">Hide navigation sidebar</div>
-</label>
-<label class="overlay toc-overlay" for="__toc">
-  <div class="visually-hidden">Hide table of contents sidebar</div>
-</label>
-
-<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
-
-
-
-<div class="page">
-  <header class="mobile-header">
-    <div class="header-left">
-      <label class="nav-overlay-icon" for="__navigation">
-        <div class="visually-hidden">Toggle site navigation sidebar</div>
-        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
-      </label>
-    </div>
-    <div class="header-center">
-      <a href="index.html"><div class="brand">Documentation Cryptoactifs </div></a>
-    </div>
-    <div class="header-right">
-      <div class="theme-toggle-container theme-toggle-header">
-        <button class="theme-toggle">
-          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
-          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
-          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
-          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
-        </button>
-      </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
-        <div class="visually-hidden">Toggle table of contents sidebar</div>
-        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
-      </label>
-    </div>
-  </header>
-  <aside class="sidebar-drawer">
-    <div class="sidebar-container">
-      
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
-  
-  
-  <span class="sidebar-brand-text">Documentation Cryptoactifs </span>
-  
-</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
-  <input class="sidebar-search" placeholder="Recherche" name="q" aria-label="Recherche">
-  <input type="hidden" name="check_keywords" value="yes">
-  <input type="hidden" name="area" value="default">
-</form>
-<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <ul class="current">
-<li class="toctree-l1 has-children"><a class="reference internal" href="cryptomonnaies.html">Les cryptomonnaies</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Les cryptomonnaies</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="blockchain.html">La Blockchain</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of La Blockchain</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="minage.html">Le minage</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Le minage</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="defis_opportunites.html">Les défis et opportunités</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Les défis et opportunités</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">En pratique</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of En pratique</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
-</ul>
-</li>
-</ul>
-
-</div>
-</div>
-
-      </div>
-      
-    </div>
-  </aside>
-  <div class="main">
-    <div class="content">
-      <div class="article-container">
-        <a href="#" class="back-to-top muted-link">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
-          </svg>
-          <span>Back to top</span>
-        </a>
-        <div class="content-icon-container">
-          <div class="view-this-page">
-  <a class="muted-link" href="_sources/en_pratique.rst.txt" title="View this page">
-    <svg><use href="#svg-eye"></use></svg>
-    <span class="visually-hidden">View this page</span>
-  </a>
-</div>
-<div class="theme-toggle-container theme-toggle-content">
-            <button class="theme-toggle">
-              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
-              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
-              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
-              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
-            </button>
-          </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
-            <div class="visually-hidden">Toggle table of contents sidebar</div>
-            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
-          </label>
-        </div>
-        <article role="main" id="furo-main-content">
-          <section id="en-pratique">
-<h1>En pratique<a class="headerlink" href="#en-pratique" title="Lien vers cette rubrique">¶</a></h1>
-<section id="l-achat-de-crypto-actifs">
-<h2>L’achat de crypto-actifs<a class="headerlink" href="#l-achat-de-crypto-actifs" title="Lien vers cette rubrique">¶</a></h2>
-<p>Maintenant que les principaux fondements des cryptomonnaies ont été exposés — à travers la notion de blockchain, le fonctionnement du minage, leurs enjeux énergétiques, ainsi que les opportunités qui en découlent —, il est pertinent d’examiner concrètement comment acquérir des crypto-actifs.</p>
-<p>Plusieurs options s’offrent à vous si vous souhaitez acheter des crypto-actifs.
-La première consiste à passer par une société spécialisée dans la vente de cryptomonnaies, appelées brokers. Ce mode d’achat est généralement simple et accessible, bien qu’il implique des prix légèrement supérieurs au marché — cette différence correspondant à la marge prélevée par le broker. En pratique, ces brokers s’approvisionnent souvent eux-mêmes sur des places de marché.
-Une seconde méthode consiste à s’inscrire sur une place de marché de crypto-actifs, ou bourse de crypto-actifs, où les utilisateurs peuvent directement acheter ou vendre des actifs. Sur ces plateformes, certains participants placent des ordres de vente ou d’achats à cours limites (les makers), contribuant à la construction de l’order book, tandis que d’autres acceptent les offres disponibles (les takers), ce qui établit le prix des transactions. Grâce à la nature décentralisée de Bitcoin, il existe une multitude de places de marché indépendantes, ce qui peut entraîner de légères différences de prix d’une plateforme à l’autre — créant ainsi des opportunités potentielles d’arbitrage.</p>
-<p>Prenons un exemple hypothétique pour illustrer ce mécanisme. Supposons qu’un vendeur propose 0,01 BTC à 110 000 €, tandis qu’un acheteur souhaite acheter 0,01 BTC à 90 000 €. Le spread — c’est-à-dire l’écart entre la meilleure offre de vente et la meilleure offre d’achat — est ici de 20 000 €, ce qui indique une faible liquidité à cet instant.
-Un nouveau vendeur arrive sur la plateforme et souhaite vendre 0,02 BTC. Pour que son offre soit prioritaire, il propose un prix plus compétitif, disons 109 000 €. Le carnet d’ordres (order book) commence alors à se remplir, et le spread se réduit. Un acheteur pressé peut décider d’acheter 0,03 BTC, ce qui fera de lui un taker acceptant les deux meilleures offres disponibles :</p>
-<p>Il achètera 0,02 BTC à 109 000 €,</p>
-<p>Puis 0,01 BTC à 110 000 €, ce qui lui coûtera au total :</p>
-<p>0,02 × 109 000 + 0,01 × 110 000 = 3 280 €</p>
-<p>Le nouveau prix du marché sera alors établi à 110 000 €, soit le prix de la dernière transaction exécutée. Cet exemple, bien que simplifié, permet d’illustrer le rôle de l’order book et le fonctionnement des interactions entre acheteurs et vendeurs sur une bourse de crypto-actifs.</p>
-<p>En général, une place de marché présentant un volume d’échange élevé aura un spread plus réduit, ce qui garantit des prix plus compétitifs pour les utilisateurs. Ces plateformes se rémunèrent en prélevant un faible pourcentage de frais sur la valeur des transactions réalisées. Parmi les plus connues, on peut citer Binance, Crypto.com ou encore Kraken.</p>
-<p>Enfin, bien que cette pratique soit nettement moins courante, les caractéristiques décentralisées des protocoles de crypto-actifs rendent également possibles des échanges directs entre particuliers, sans intermédiaire. Ce type d’échange pair-à-pair peut se réaliser pour peu qu’un acheteur et un vendeur entrent directement en contact et s’accordent sur les modalités de la transaction.</p>
-</section>
-<section id="conservation-des-actifs">
-<h2>Conservation des actifs<a class="headerlink" href="#conservation-des-actifs" title="Lien vers cette rubrique">¶</a></h2>
-<p>Une fois la transaction réalisée, le détenteur de crypto-actifs est confronté à une décision importante : laisser ses actifs numériques sur la plateforme d’achat, laquelle en devient alors le dépositaire, ou bien rapatrier ses fonds vers un portefeuille personnel (wallet).</p>
-<p>La première option présente l’avantage de la simplicité d’usage, mais elle expose l’utilisateur à des risques significatifs. En effet, si la plateforme venait à faire faillite ou à subir un piratage, les fonds pourraient être définitivement perdus. De nombreux clients en ont fait l’amère expérience, notamment dans le cas de Bitfinex, victime d’un piratage massif, ou encore avec FTX, dont la gestion frauduleuse a entraîné des pertes majeures pour ses utilisateurs.</p>
-<p>L’alternative consiste à transférer ses crypto-actifs sur un portefeuille personnel, ce qui permet à l’utilisateur de devenir entièrement maître de ses fonds, sans dépendance vis-à-vis d’un tiers. Bien que cette solution soit plus technique, elle offre une sécurité renforcée. Le processus implique généralement l’installation d’un logiciel portefeuille (wallet), qui génère une clé maîtresse, également appelée seed. Cette seed permet de dériver les adresses associées au portefeuille et de signer les transactions.</p>
-<p>La seed se présente sous la forme d’une suite de 12 ou 24 mots, choisis dans une liste prédéfinie de 4096 termes. L’ordre des mots est essentiel, et leur combinaison permet à elle seule de reconstituer l’accès complet au portefeuille. Il est donc vivement déconseillé de créer soi-même ses mots racines, car les humains sont notoirement inefficaces pour générer une véritable liste aléatoire.</p>
-<p>Afin de protéger cette information critique, de nombreux experts en sécurité recommandent l’usage de portefeuilles matériels (hardware wallets), des dispositifs conçus pour effectuer les signatures cryptographiques de manière sécurisée, même dans le cas où l’ordinateur hôte serait compromis. En France, la société licorne Ledger s’est imposée comme un acteur majeur dans ce domaine, en proposant des solutions robustes pour le stockage sécurisé des clés privées.</p>
-</section>
-<section id="les-taxes">
-<h2>Les taxes<a class="headerlink" href="#les-taxes" title="Lien vers cette rubrique">¶</a></h2>
-<p>La possession et l’utilisation de crypto-actifs impliquent également des obligations fiscales, qu’il est essentiel de connaître pour rester en conformité avec la législation. Ces obligations varient selon le pays de résidence fiscale du détenteur.</p>
-<p>En France, en 2024, le régime applicable aux particuliers non professionnels prévoit que seules les plus-values issues de la cession de crypto-actifs contre des biens, des services ou des monnaies ayant cours légal sont imposables. Ces plus-values sont en général soumises à la flat tax au taux global de 30 %.</p>
-<p>Par ailleurs, il est fondamental de déclarer dans sa déclaration de revenus l’existence de tout compte détenu sur une plateforme étrangère, qu’il s’agisse d’un broker ou d’une place de marché. Cette obligation de déclaration concerne non seulement les comptes personnels, mais aussi, de manière souvent méconnue, les comptes ouverts à l’étranger au nom des enfants mineurs : ceux-ci doivent être intégrés à la déclaration fiscale des parents.</p>
-<div class="toctree-wrapper compound">
-</div>
-</section>
-</section>
-
-        </article>
-      </div>
-      <footer>
-        
-        <div class="related-pages">
-          
-          <a class="prev-page" href="defis_opportunites.html">
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-              <div class="page-info">
-                <div class="context">
-                  <span>Previous</span>
-                </div>
-                
-                <div class="title">Les défis et opportunités</div>
-                
-              </div>
-            </a>
-        </div>
-        <div class="bottom-of-page">
-          <div class="left-details">
-            <div class="copyright">
-                Copyright &#169; 2025, Camille
-            </div>
-            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-            
-            <a href="https://github.com/pradyunsg/furo">Furo</a>
-            
-          </div>
-          <div class="right-details">
-            
-          </div>
-        </div>
-        
-      </footer>
-    </div>
-    <aside class="toc-drawer">
-      
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">En pratique</a><ul>
-<li><a class="reference internal" href="#l-achat-de-crypto-actifs">L’achat de crypto-actifs</a></li>
-<li><a class="reference internal" href="#conservation-des-actifs">Conservation des actifs</a></li>
-<li><a class="reference internal" href="#les-taxes">Les taxes</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
-      
-      
-    </aside>
-  </div>
-</div><script src="_static/documentation_options.js?v=d1a510d7"></script>
-    <script src="_static/doctools.js?v=9bcbadda"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/scripts/furo.js?v=5fa4622c"></script>
-    <script src="_static/translations.js?v=e6b791cb"></script>
-    </body>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Les cryptomonnaies</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" type="image/png" href="Images/testfinal.png">
+</head>
+<body>
+	<div class="page-container">
+	<nav class="sidebar">
+  <ul>
+    <li>
+      <a href="index.html" class="title">Les cryptomonnaies</a>
+      <ul class="submenu">
+        <li><a href="index.html#cryptomonnaies-crypto-actifs-de-quoi-parle-t-on">Cryptomonnaies, crypto-actifs : de quoi parle-t-on ?</a></li>
+        <li><a href="index.html#crypto-actifs-differents-usages">Crypto-actifs : différents usages</a></li>
+		<li><a href="index.html#les-cryptomonnaies-une-monnaie-a-part-entiere">Les cryptomonnaies, une monnaie à part entière ?</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="blockchain.html" class="title">La Blockchain</a>
+      <ul class="submenu">
+        <li><a href="blockchain.html#qu-est-ce-que-la-blockchain">Qu'est-ce que la blockchain ?</a></li>
+        <li><a href="blockchain.html#les-differents-types-de-blockchains">Les différents types de blockchains</a></li>
+		<li><a href="blockchain.html#plusieurs-mecanismes-de-consensus">Plusieurs mécanismes de consensus</a></li>
+	  </ul>
+    </li>
+	<li>
+      <a href="minage.html" class="title">Le minage</a>
+      <ul class="submenu">
+        <li><a href="minage.html#qu-est-ce-que-le-minage">Qu'est-ce que le minage ?</a></li>
+        <li><a href="minage.html#theorie-du-consensus">Théorie du consensus</a></li>
+		<li><a href="minage.html#le-hachage-en-theorie">Le hachage en théorie</a></li>
+		<li><a href="minage.html#le-hachage-en-pratique">Le hachage en pratique</a></li>
+		<li><a href="minage.html#la-cible-de-difficulte">La cible de difficulté</a></li>
+		<li><a href="minage.html#le-systeme-de-recompenses">Le système de récompenses</a></li>
+	  </ul>
+    </li>
+	<li>
+      <a href="defis_opportunites.html" class="title defis-title">Défis et opportunités environnementales</a>
+      <ul class="submenu">
+        <li><a href="defis_opportunites.html#empreinte-ecologique">Empreinte écologique</a></li>
+        <li><a href="defis_opportunites.html#le-challenge-des-enr">Le challenge des ENR</a></li>
+		<li><a href="defis_opportunites.html#la-problematique-du-methane">La problématique du méthane</a></li>
+	  </ul>
+    </li>
+	<li>
+      <a href="en_pratique.html" class="title">En pratique</a>
+      <ul class="submenu">
+        <li><a href="en_pratique.html#achat-de-crypto-actifs">Achat de crypto-actifs</a></li>
+        <li><a href="en_pratique.html#conservation-des-actifs">Conservation des actifs</a></li>
+		<li><a href="en_pratique.html#taxes-et-obligations-fiscales">Taxes et obligations fiscales</a></li>
+	  </ul>
+    </li>
+  </ul>
+	</nav>
+	<header class="page-header">
+		<img src="Images/logo-camille.png" alt="Logo" class="header-image">
+		<h1>Krypto-numisma</h1>
+	</header>
+	<div class="main-content">
+    <h1>En pratique</h1>
+    <section id="achat-de-crypto-actifs">
+        <h2>Achat de crypto-actifs</h2>
+        <p>Maintenant que les principaux fondements des cryptomonnaies ont été exposés — à travers la notion de blockchain, le fonctionnement du minage, leurs enjeux énergétiques, ainsi que les opportunités qui en découlent —, il est pertinent d’examiner concrètement comment acquérir des crypto-actifs.</p>
+        <p>Plusieurs options s’offrent à vous si vous souhaitez acheter des crypto-actifs.</p>
+		<ul>
+			<li>La première consiste à passer par une société spécialisée dans la vente de cryptomonnaies, appelées brokers. Ce mode d’achat est généralement simple et accessible, bien qu’il implique des prix légèrement supérieurs au marché — cette différence correspondant à la marge prélevée par le broker. En pratique, ces brokers s’approvisionnent souvent eux-mêmes sur des places de marché.</li>
+			<li>Une seconde méthode consiste à s’inscrire sur une place de marché de crypto-actifs, ou bourse de crypto-actifs, où les utilisateurs peuvent directement acheter ou vendre des actifs entre eux. Sur ces plateformes, certains participants placent des ordres de vente ou d’achats à cours limites (les makers), contribuant à la construction de l’<a href="https://academy.youngplatform.com/fr/trading/comment-marche-order-book-exchange/">order book</a>, tandis que d’autres acceptent les offres disponibles (les takers), ce qui établit le prix des transactions. Grâce à la nature décentralisée de Bitcoin, il existe une multitude de places de marché indépendantes, ce qui peut entraîner de légères différences de prix d’une plateforme à l’autre — créant ainsi des opportunités potentielles d’arbitrage.</li>
+		</ul>
+		<p>Prenons un exemple hypothétique pour illustrer ce mécanisme. <br>Supposons qu’un vendeur propose 0,01 BTC à 110 000 €, tandis qu’un acheteur souhaite acheter 0,01 BTC à 90 000 €. Le spread — c’est-à-dire l’écart entre la meilleure offre de vente et la meilleure offre d’achat — est ici de 20 000 €, ce qui indique une faible liquidité à cet instant. Un nouveau vendeur arrive sur la plateforme et souhaite vendre 0,02 BTC. Pour que son offre soit prioritaire, il propose un prix plus compétitif, disons 109 000 €.Le carnet d’ordres (order book) commence alors à se remplir, et le spread se réduit. <br>Un acheteur pressé peut décider d’acheter 0,03 BTC, ce qui fera de lui un taker acceptant les deux meilleures offres disponibles :</p>
+		<ul>
+			<li>Il achètera 0,02 BTC à 109 000 €,</li>
+			<li>Puis 0,01 BTC à 110 000 €, </li>
+			<li>Ce qui lui coûtera au total : 0,02 × 109 000 + 0,01 × 110 000 = 3 280 €
+		</ul>
+		<p>Le nouveau prix du marché sera alors établi à 110 000 €, soit le prix de la dernière transaction exécutée. Cet exemple, bien que simplifié, permet d’illustrer le rôle de l’order book et le fonctionnement des interactions entre acheteurs et vendeurs sur une bourse de crypto-actifs.</p>
+		<div class="parent ligne">
+			<div class="bloc-image-gauche-grande">
+				<img class="image-container-left image-order-book" src="Images/order-book.png" alt="Order book BTC/USD datant du 25 avril 2025.">
+				<div class="image-description-gauche">
+					Order book BTC/USD datant du 25 avril 2025 (<a href="https://pro.kraken.com/app/trade/btc-usd">Kraken.com</a>).
+				</div>
+			</div>
+			<div class="texte-droite-petite-special">
+				<p> En général, une place de marché présentant un volume d’échange élevé aura un spread plus réduit, ce qui garantit des prix plus compétitifs pour les utilisateurs. Ces plateformes se rémunèrent en prélevant un faible pourcentage de frais sur la valeur des transactions réalisées. Parmi les plus connues, on peut citer Binance, Crypto.com ou encore Kraken.</p>     
+			</div>
+		</div>
+		<p>Enfin, bien que cette pratique soit nettement moins courante, les caractéristiques décentralisées des protocoles de crypto-actifs rendent également possibles des échanges directs entre particuliers, sans intermédiaire. Ce type d’échange pair-à-pair peut se réaliser pour peu qu’un acheteur et un vendeur entrent directement en contact et s’accordent sur les modalités de la transaction.</p>
+    </section>
+    <section id="conservation-des-actifs">
+        <h2>Conservation des actifs</h2>
+        <p>Une fois la transaction réalisée, le détenteur de crypto-actifs est confronté à une décision importante : laisser ses actifs numériques sur la plateforme d’achat, laquelle en devient alors le dépositaire, ou bien rapatrier ses fonds vers un portefeuille personnel (wallet).</p>
+        <p>La première option présente l’avantage de la simplicité d’usage, mais elle expose l’utilisateur à des risques significatifs. En effet, si la plateforme venait à faire faillite ou à subir un piratage, les fonds pourraient être définitivement perdus. De nombreux clients en ont fait l’amère expérience, notamment dans le cas de Bitfinex, victime d’un piratage massif, ou encore avec FTX, dont la gestion frauduleuse a entraîné des pertes majeures pour ses utilisateurs.</p>
+        <p>L’alternative consiste à transférer ses crypto-actifs sur un portefeuille personnel, ce qui permet à l’utilisateur de devenir entièrement maître de ses fonds, sans dépendance vis-à-vis d’un tiers. Bien que cette solution soit plus technique, elle offre une sécurité renforcée. Le processus implique généralement l'utilisation d'un portefeuille (wallet), qui génère une clé maîtresse, également appelée seed. Cette seed permet de dériver les adresses associées au portefeuille et de signer les transactions.</p>
+        <p>La seed se présente sous la forme d’une suite de 12 ou 24 mots, choisis dans une liste prédéfinie de 4096 termes. L’ordre des mots est essentiel, et leur combinaison permet à elle seule de reconstituer l’accès complet au portefeuille. Il est donc vivement déconseillé de créer soi-même ses mots racines, car les humains sont notoirement inefficaces pour générer une véritable liste aléatoire.</p>
+		<div class="parent ligne-inverse">
+			<div class="texte-gauche">
+				<p>Afin de protéger cette information critique, de nombreux experts en sécurité recommandent l’usage de <a href="https://www.kaspersky.fr/resource-center/definitions/what-is-a-hardware-wallet">portefeuilles matériels</a> (hardware wallets), des dispositifs conçus pour effectuer les signatures cryptographiques de manière sécurisée, même dans le cas où l’ordinateur hôte serait compromis. En France, la société licorne Ledger s’est imposée comme un acteur majeur dans ce domaine, en proposant des solutions robustes pour le stockage sécurisé des clés privées.</p>   
+			</div>				
+			<div class="bloc-image-droite-grande">
+				<img class="image-container-right image-hardware-wallet" src="Images/hardware-wallet.jpg" alt="Photo d'un hardware wallet Ledger.">
+				<div class="image-description-droite-grande">
+					Photo d'un hardware wallet Ledger.
+				</div>
+			</div>
+		</div>
+        <p>Afin de protéger cette information critique, de nombreux experts en sécurité recommandent l’usage de <a href="https://www.kaspersky.fr/resource-center/definitions/what-is-a-hardware-wallet">portefeuilles matériels</a> (hardware wallets), des dispositifs conçus pour effectuer les signatures cryptographiques de manière sécurisée, même dans le cas où l’ordinateur hôte serait compromis. En France, la société licorne Ledger s’est imposée comme un acteur majeur dans ce domaine, en proposant des solutions robustes pour le stockage sécurisé des clés privées.</p>
+    </section>
+	 <section id="taxes-et-obligations-fiscales">
+        <h2>Taxes et obligations fiscales</h2>
+        <p>La possession et l’utilisation de crypto-actifs impliquent également des obligations fiscales, qu’il est essentiel de connaître pour rester en conformité avec la législation. Ces obligations varient selon le pays de résidence fiscale du détenteur.</p>
+        <p><a href="https://www.economie.gouv.fr/cedef/fiches-pratiques/le-regime-fiscal-des-cryptomonnaies">En France</a>, en 2024, le régime applicable aux particuliers non professionnels prévoit que seules les plus-values issues de la cession de crypto-actifs contre des biens, des services ou des monnaies ayant cours légal sont imposables. Ces plus-values sont en général soumises à la flat tax au taux global de 30 %.</p>
+        <p>Par ailleurs, il est fondamental de déclarer dans sa déclaration de revenus l’existence de tout compte détenu sur une plateforme étrangère, qu’il s’agisse d’un broker ou d’une place de marché. Cette obligation de déclaration concerne non seulement les comptes personnels, mais aussi, de manière souvent méconnue, les comptes ouverts à l’étranger au nom des enfants mineurs : ceux-ci doivent être intégrés à la déclaration fiscale des parents.</p>
+    </section>
+	<section>
+		<h2>Sources :</h2>
+		<ul style="list-style-type: square">		
+			<li><em><a href="file:///C:/Users/camillebrenner2/Downloads/Dictionnaire%20de%20Bitcoin-1.pdf">Le dictionnaire de Bitcoin</a></em> écrit par Loïc Morel</li>
+			<li><em>L'élégance de Bitcoin</em> écrit par Ludovic Lars</li>
+			<li>Site du <a href="https://www.economie.gouv.fr/cedef/fiches-pratiques/le-regime-fiscal-des-cryptomonnaies">Ministère de l'économie des finances et de la souveraineté industrielle et numérique</a></li>
+	</div>
+	<nav class="pagination">
+	<div class="boutons-pagination">
+		<a href="defis_opportunites.html" class="btn">Précédent</a></li>
+		<span class="btn disabled">Suivant</span></li>
+	</div>
+	</nav>
+	</div>
+</body>
 </html>

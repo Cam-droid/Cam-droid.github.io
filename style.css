@@ -1,0 +1,584 @@
+/* -------------------------------------------
+   style.css
+   Feuille de style du site
+   Auteur : Brenner Camille
+   Dernière modification : 28/04/25
+------------------------------------------- */
+
+/* Style général du corps de la page */
+body {
+  margin-bottom: 40px;
+  margin-left: 20px; /* Décalage à gauche pour espacer du bord */
+  padding: 0;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 19px;
+  background: #f9f0fa; /* Fond clair violet pâle */
+  color: #310139; /* Texte violet foncé */
+  display: flex; /* Utilisation de Flexbox pour la mise en page */
+}
+
+/* Liste sans puces avec flèches épaisses personnalisées */
+ul.fleche_epaisse {
+  list-style-type: none; /* Supprime les puces par défaut */
+  padding-left: 2rem; /* Décalage du contenu vers la droite */
+}
+
+/* Élément de liste avec image de flèche stylisée en arrière-plan */
+ul.fleche_epaisse li {
+  background-image: url('Images/fleche_stylisee.png');
+  background-position: 0 0;
+  background-size: 1.2em 1.2em;
+  background-repeat: no-repeat;
+  padding-left: 1.8em; /* Décalage pour laisser place à la flèche */
+  margin-bottom: 0.7em; /* Espacement entre les éléments */
+}
+
+/* Éléments de liste sans la classe fleche_epaisse ont un espacement plus grand */
+ul:not(.fleche_epaisse) li {
+  margin-bottom: 1em;
+}
+
+/* Classe spéciale pour texte avec police Comic Sans et couleur verte */
+.special_hash {
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  color: #25681c;
+  margin-left: 80px; /* Décalage vers la droite */
+  display: inline-block; /* Permet l'application de marges sur un élément inline */
+}
+
+/* Petite flèche fine avant le contenu (utilise Unicode) */
+.fleche_fine::before {
+  content: "\2192"; /* Flèche droite → */
+  margin: 0 0.3em;
+  color: #222; /* Couleur sombre */
+  font-size: 1.1em; /* Taille légèrement plus grande */
+  vertical-align: middle; /* Alignement vertical centré */
+}
+
+/* Signe d'approximation après le contenu */
+.approximatif::after {
+  content: "\2248"; /* Symbole ≈ */
+}
+
+/* Boutons stylisés */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #d280e7; /* Violet clair */
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none; /* Empêche la sélection du texte */
+  transition: background-color 0.3s ease; /* Animation au survol */
+}
+
+/* Changement de couleur au survol des boutons */
+.btn:hover {
+  background-color: #af6bc0; /* Violet plus foncé */
+}
+
+/* Conteneur de pagination positionné */
+.pagination {
+  margin-top: auto;
+  margin-left: 220px; /* Décalage pour éviter la sidebar */
+}
+
+/* Bouton désactivé avec style spécifique */
+.btn.disabled {
+  background-color: #e4bcee; /* Violet très clair */
+  color: #fef8ff; /* Texte très clair */
+  cursor: not-allowed; /* Curseur interdit */
+  pointer-events: none; /* Empêche tout clic */
+  text-decoration: none;
+}
+
+/* Conteneur principal de la page avec marges latérales */
+.page-container {
+  margin-left: 20px;
+  margin-right: 25px;
+}
+
+/* Barre latérale fixe à gauche */
+.sidebar {
+  width: 270px; /* Largeur fixe du menu */
+  position: fixed; /* Fixe la sidebar lors du scroll */
+  overflow-y: auto; /* Barre de défilement verticale si nécessaire */
+  background-color: #fbe6ff; /* Fond violet très clair */
+  padding: 20px;
+  box-sizing: border-box; /* Inclut padding dans la largeur */
+  height: 100vh; /* Hauteur égale à la fenêtre */
+  top: 0;
+  left: 0;
+}
+
+/* Liste sans puces dans la sidebar */
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+/* Liens sans soulignement dans la sidebar */
+.sidebar a {
+  text-decoration: none;
+}
+
+/* Titres cliquables dans la sidebar */
+.title {
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  font-size: 18px;
+  padding: 8px 12px;
+  background-color: #c77bda; /* Violet moyen */
+  color: white;
+  border-radius: 30px;
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* Marge supplémentaire au-dessus du premier titre dans la sidebar */
+.sidebar li:first-child .title {
+  margin-top: 45px;
+}
+
+/* Sous-menu caché par défaut */
+.submenu {
+  display: none;
+  margin-left: 15px;
+  padding-left: 10px;
+  font-size: 14px;
+}
+
+/* Affiche le sous-menu au survol du parent */
+.sidebar li:hover > .submenu {
+  display: block;
+}
+
+/* Liens dans le sous-menu avec style spécifique */
+.submenu a {
+  text-decoration: none;
+  color: #c291ce; /* Violet clair */
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* Décalage à gauche des liens dans le sous-menu */
+.sidebar .submenu a {
+  margin-left: 15px;
+}
+
+/* Effet au survol des liens du sous-menu */
+.submenu a:hover {
+  text-decoration: underline;
+  color: #a964ba; /* Violet plus foncé */
+}
+
+/* Contenu principal à droite de la sidebar */
+.main-content {
+  margin-left: 250px; /* Décalage pour laisser la place à la sidebar */
+  padding: 20px;
+  flex-grow: 1; /* Prend tout l'espace restant */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Conteneur des boutons de pagination alignés à droite */
+.boutons-pagination {
+  display: flex;
+  justify-content: right; /* Aligne à droite */
+  align-items: center; /* Centre verticalement */
+}
+
+/* Conteneurs d'images alignées à gauche */
+.image-container-left {
+  text-align: left-side; /* Note: 'left-side' n'est pas une valeur CSS valide, probablement 'left' voulu */
+  margin-right: 15px; /* Espace entre image et texte */
+}
+
+/* Conteneurs d'images alignées à droite */
+.image-container-right {
+  text-align: right-side; /* Note: 'right-side' n'est pas une valeur CSS valide, probablement 'right' voulu */
+  margin-right: 15px;
+}
+
+/* Conteneur parent avec largeur fixe */
+.parent {
+  width: 800px;
+}
+
+/* Styles spécifiques pour différentes images avec marges et tailles */
+.image-coinmarketcap-nb-cryptocurrencies {
+  margin-left: 30px;
+  width: 260px;
+  height: auto;
+}
+
+.image-ancre-bateau-blockchain {
+  margin-left: 30px;
+  width: 355px;
+  height: auto;
+}
+
+.image-panneau-solaire {
+  margin-left: 30px;
+  width: 285px;
+  height: auto;
+}
+
+.image-torchere-gaz {
+  margin-top: 45px;
+  margin-left: 30px;
+  width: 330px;
+  height: auto;
+}
+
+.image-cypherpunks {
+  margin-left: 30px;
+  width: 310px;
+  height: auto;
+}
+
+.image-energie-bitcoin {
+  margin-left: 30px;
+  width: 360px;
+  height: auto;
+}
+
+.image-conteneur-ferme {
+  margin-top: 45px;
+  margin-left: 30px;
+  width: 320px;
+  height: auto;
+}
+
+.image-ferme-methane {
+  margin-top: 18px;
+  margin-left: 30px;
+  width: 320px;
+  height: auto;
+}
+
+.image-time-chain-halving {
+  margin-top: 10px;
+  margin-left: 30px;
+  width: 220px;
+  height: auto;
+}
+
+.image-aristote {
+  margin-left: 30px;
+  width: 200px;
+  height: auto;
+}
+
+.image-blockchain-bitcoin {
+  margin-top: 25px;
+  margin-left: 30px;
+  width: 350px;
+  height: auto;
+}
+
+.image-ferme-minage {
+  margin-top: 30px;
+  margin-left: 30px;
+  width: 350px;
+  height: auto;
+}
+
+.image-pb-generaux-byzantins {
+  margin-right: 30px;
+  margin-left: 35px;
+  width: 400px;
+  height: auto;
+}
+
+.image-SHA-256 {
+  margin-left: 30px;
+  width: 180px;
+  height: auto;
+}
+
+.image-hardware-wallet {
+  margin-top: 25px;
+  margin-right: 30px;
+  width: 390px;
+  height: auto;
+}
+
+.image-order-book {
+  margin-top: 10px;
+  margin-left: 30px;
+  width: 240px;
+  height: auto;
+}
+
+.image-dogecoin {
+  margin-left: 30px;
+  width: 200px;
+  height: auto;
+}
+
+.image-nyan-cat {
+  width: 350px;
+  height: auto;
+}
+
+/* Ligne flexible alignant les éléments en haut */
+.ligne {
+  display: flex;
+  align-items: flex-start; /* Alignement en haut */
+  width: 100%;
+}
+
+/* Ligne flexible inversée (même style que .ligne) */
+.ligne-inverse {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Espacement au-dessus des titres h2 */
+h2 {
+  margin-top: 40px;
+}
+
+/* Espacement au-dessus et en-dessous des titres h1 */
+h1 {
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+/* Espacement au-dessus des h2 qui suivent un h1 */
+h1 + h2 {
+  margin-top: 10px;
+}
+
+/* Ajout d'un chevron à droite des titres */
+.title::after {
+  content: "›"; /* Chevron droit */
+  position: absolute;
+  right: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  margin-left: 12px;
+  color: white;
+  opacity: 0.7;
+  pointer-events: none; /* Ne gêne pas les clics */
+}
+
+/* Même effet de chevron pour les titres des défis */
+.defis-title::after {
+  content: "›";
+  position: absolute;
+  right: 13px;
+  top: 50%;
+  transform: translateY(-35%);
+  font-size: 16px;
+  margin-left: 12px;
+  color: white;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Bloc image aligné à droite avec centrage vertical */
+.bloc-image-droite {
+  margin-right: 24px;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 335px; /* Largeur fixe correspondant à l'image */
+}
+
+/* Bloc image droite plus large */
+.bloc-image-droite-grande {
+  margin-right: 24px;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+}
+
+/* Bloc image gauche petite */
+.bloc-image-gauche-petite {
+  margin-right: 24px;
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+}
+
+/* Bloc image gauche grande */
+.bloc-image-gauche-grande {
+  margin-right: 24px;
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Bloc image gauche standard */
+.bloc-image-gauche {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 24px;
+  width: 250px; /* Largeur adaptée à l'image */
+}
+
+/* Description sous image à droite */
+.image-description-droite {
+  margin-right: 15px;
+  font-size: 12px;
+  color: #222;
+  text-align: center;
+  margin-top: 8px;
+  width: 100%;
+  max-width: 370px;
+}
+
+/* Description sous image droite plus grande */
+.image-description-droite-grande {
+  margin-left: 15px;
+  font-size: 12px;
+  color: #222;
+  text-align: center;
+  margin-top: 8px;
+  width: 100%;
+  max-width: 450px;
+}
+
+/* Description sous image à gauche */
+.image-description-gauche {
+  margin-left: 10px;
+  font-size: 12px;
+  color: #222;
+  text-align: center;
+  margin-top: 8px;
+  width: 100%;
+  max-width: 250px;
+}
+
+/* Description sous image gauche petite */
+.image-description-gauche-petite {
+  margin-left: 10px;
+  font-size: 12px;
+  color: #222;
+  text-align: center;
+  margin-top: 8px;
+  width: 100%;
+  max-width: 650px;
+}
+
+/* Texte à gauche avec hauteur minimale */
+.texte-gauche {
+  flex: 1;
+  min-height: 40px;
+}
+
+/* Texte à gauche centré verticalement, hauteur plus grande */
+.texte-gauche-grand {
+  flex: 1;
+  display: flex;
+  align-items: center; /* Centre verticalement par rapport à l'image */
+  min-height: 200px;
+}
+
+/* Texte à droite centré verticalement, hauteur adaptée */
+.texte-droite {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-height: 265px; /* Correspond à la hauteur de l'image */
+}
+
+/* Texte à droite petite hauteur */
+.texte-droite-petite {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-height: 220px;
+}
+
+/* Texte à droite petite hauteur, variante */
+.texte-droite-petite-plus {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-height: 150px;
+}
+
+/* Texte à droite petite hauteur, variante spéciale */
+.texte-droite-petite-special {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-height: 150px;
+}
+
+/* Style général pour toutes les images */
+img {
+  border-radius: 10px; /* Bords arrondis pour un effet esthétique */
+}
+
+/* Effet de survol sur les images */
+img:hover {
+  box-shadow: 0 4px 20px rgba(199, 123, 218, 0.3); /* Ombre douce */
+  transform: scale(1.03); /* Zoom léger */
+  transition: box-shadow 0.3s, transform 0.3s; /* Animation fluide */
+}
+
+/* En-tête de page centré avec Flexbox */
+.page-header {
+  display: flex;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  gap: 40px; /* Espacement entre éléments */
+  font-size: 40px;
+  font-family: 'AcademyEngraved'; /* Police personnalisée */
+  margin-left: 220px; /* Décalage à droite de la sidebar */
+  width: calc(100% - 220px); /* Largeur restante */
+  background-color: #faddff; /* Fond violet clair */
+  padding: 25px;
+  border-radius: 10px;
+}
+
+/* Déclaration de la police personnalisée AcademyEngraved */
+@font-face {
+  font-family: 'AcademyEngraved';
+  src: url('Images/Academy-Engraved-LET-Fonts.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Chargement fluide */
+}
+
+/* Image dans l'en-tête avec taille fixe */
+.header-image {
+  width: 180px;
+  height: auto;
+}
+
+/* H1 dans l'en-tête avec ajustement vertical */
+.page-header > h1 {
+  margin: 0;
+  transform: translateY(-5px); /* Légère remontée pour alignement */
+}
+
+/* Effet de survol sur les titres du menu latéral */
+.title:hover {
+  background-color: #a964ba; /* Change la couleur de fond */
+  transform: scale(1.05);    /* Zoom léger */
+  transition: background-color 0.25s, transform 0.2s; /* Animation fluide */
+}
+
+
+
